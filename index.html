@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechNova Internship Academy | Industry-Oriented Training for Future Engineers</title>
+<meta name="description" content="Premium internship programs for B.Tech, BCA, MCA students. Learn from real industry engineers at BEL, Google, TCS, Infosys.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#01050d;
+  --deep:#030d1c;
+  --surface:#061224;
+  --card:#091829;
+  --card2:#0b1e33;
+  --glass:rgba(9,24,41,0.7);
+  --b0:rgba(96,165,250,0.07);
+  --b1:rgba(96,165,250,0.15);
+  --b2:rgba(96,165,250,0.35);
+  --b3:rgba(96,165,250,0.6);
+  --c1:#60a5fa;
+  --c2:#3b82f6;
+  --c3:#1d4ed8;
+  --c-green:#10b981;
+  --c-amber:#f59e0b;
+  --c-rose:#f43f5e;
+  --c-violet:#8b5cf6;
+  --c-cyan:#06b6d4;
+  --t0:#f8fafc;
+  --t1:#cbd5e1;
+  --t2:#64748b;
+  --t3:#334155;
+  --t4:#1e293b;
+  --grad-main:linear-gradient(135deg,#60a5fa,#3b82f6,#8b5cf6);
+  --grad-gold:linear-gradient(135deg,#f59e0b,#fbbf24,#fde68a);
+  --grad-green:linear-gradient(135deg,#10b981,#34d399);
+  --shadow-blue:0 0 50px rgba(59,130,246,0.2);
+  --shadow-card:0 8px 40px rgba(0,0,0,0.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--t1);font-family:'Outfit',sans-serif;font-weight:400;overflow-x:hidden;line-height:1.65}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;font-weight:700;line-height:1.15;letter-spacing:-0.02em}
+.italic{font-family:'Crimson Pro',serif;font-style:italic}
+.mono{font-family:'IBM Plex Mono',monospace}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--deep)}
+::-webkit-scrollbar-thumb{background:var(--c2);border-radius:3px}
+
+/* NOISE */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto;z-index:200;padding:0 2rem;transition:all .3s;background:rgba(1,5,13,.24);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04)}
+@media(max-width:640px){nav{padding:0 1rem;}}
+.nav-wrap{max-width:1380px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-icon{width:42px;height:42px;border-radius:12px;background:var(--grad-main);display:grid;place-items:center;font-weight:900;font-size:15px;color:#fff;letter-spacing:-.5px;box-shadow:0 0 24px rgba(59,130,246,0.35)}
+.logo-name{font-size:1.15rem;font-weight:800;color:var(--t0);letter-spacing:-.03em}
+.logo-name em{font-style:normal;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-menu{display:flex;align-items:center;gap:.1rem;list-style:none}
+.nav-menu a{font-size:.82rem;font-weight:500;color:var(--t2);text-decoration:none;padding:.45rem .8rem;border-radius:7px;transition:all .2s;white-space:nowrap}
+.nav-menu a:hover{color:var(--t0);background:var(--b0)}
+.nav-cta{background:var(--grad-main)!important;color:#fff!important;font-weight:600!important;padding:.5rem 1.25rem!important;border-radius:9px!important;box-shadow:0 0 20px rgba(59,130,246,0.3)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 25px rgba(59,130,246,0.5)!important}
+.nav-scrolled{background:rgba(1,5,13,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--b1)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:24px;height:2px;background:var(--t1);border-radius:2px;transition:.3s}
+@media(max-width:960px){
+  .nav-menu{display:none;position:absolute;top:72px;inset:auto 0;background:rgba(1,5,13,.97);backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem 2rem;gap:.25rem;border-bottom:1px solid var(--b1)}
+  .nav-menu.open{display:flex}
+  .hamburger{display:flex}
+}
+
+/* HERO */
+#home{min-height:100vh;display:flex;align-items:center;padding:72px 2rem 0;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 15%, rgba(96,165,250,0.06), transparent 32%), radial-gradient(circle at 80% 20%, rgba(139,92,246,0.04), transparent 24%)}
+@media(max-width:960px){#home{padding:72px 1.5rem 0;}}
+@media(max-width:640px){#home{padding:72px 1rem 0;}}
+@media(max-width:480px){#home{padding:72px 0.75rem 0;}}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+#aiCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.95;mix-blend-mode:screen;pointer-events:none}
+.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(59,130,246,.15) 0%,transparent 22%),radial-gradient(circle at 80% 30%,rgba(139,92,246,.12) 0%,transparent 20%),radial-gradient(circle at 40% 80%,rgba(6,182,212,.12) 0%,transparent 18%);pointer-events:none}
+.hb-grid{position:absolute;inset:0;background-image:linear-gradient(var(--b0) 1px,transparent 1px),linear-gradient(90deg,var(--b0) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 70% at 50% 0%,black 30%,transparent 100%)}
+.hb-glow1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.14),transparent 70%);top:-200px;right:-150px;animation:floatA 9s ease-in-out infinite}
+.hb-glow2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.1),transparent 70%);bottom:-150px;left:-100px;animation:floatA 13s ease-in-out infinite reverse}
+.hb-glow3{position:absolute;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.08),transparent 70%);top:40%;left:40%;animation:floatA 7s ease-in-out infinite}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-35px)}}
+.hero-inner{max-width:1380px;margin:0 auto;width:100%;display:grid;grid-template-columns:55% 45%;gap:3rem;align-items:center;position:relative;z-index:2;padding:4rem 0}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);border-radius:100px;padding:.35rem 1rem .35rem .5rem;margin-bottom:1.75rem}
+.kicker-dot{width:22px;height:22px;border-radius:50%;background:var(--grad-green);display:grid;place-items:center;font-size:.55rem;color:#fff;flex-shrink:0}
+.kicker-text{font-size:.78rem;font-weight:600;color:var(--c-green);letter-spacing:.04em;text-transform:uppercase}
+h1.hero-h{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:900;color:var(--t0);margin-bottom:1.5rem;letter-spacing:-.04em;text-shadow:0 20px 50px rgba(0,0,0,.18);}
+h1.hero-h .accent{background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 6px 18px rgba(59,130,246,.22)}
+h1.hero-h .italic-serif{font-family:'Crimson Pro',serif;font-style:italic;font-weight:300;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-para{font-size:1.08rem;color:var(--t2);max-width:38rem;margin-bottom:2.25rem;line-height:1.85;font-weight:400}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem;padding:.85rem 1.75rem;border-radius:11px;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+.btn-blue{background:var(--grad-main);color:#fff;box-shadow:0 4px 24px rgba(59,130,246,.35)}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(59,130,246,.55)}
+.btn-ghost{background:transparent;color:var(--t0);border:1px solid var(--b2)}
+.btn-ghost:hover{background:var(--b0);border-color:var(--b3);transform:translateY(-2px)}
+@media(max-width:760px){.btn{font-size:.88rem;padding:.75rem 1.5rem;border-radius:10px;}}
+@media(max-width:500px){.btn{font-size:.85rem;padding:.7rem 1.25rem;border-radius:9px;min-height:44px;width:100%;}}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.hstat{background:var(--card);border:1px solid var(--b1);border-radius:14px;padding:1.1rem 1rem;text-align:center}
+.hstat-n{font-size:1.65rem;font-weight:900;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.03em}
+.hstat-l{font-size:.72rem;color:var(--t2);margin-top:.2rem;font-weight:500}
+
+/* HERO VISUAL */
+.hero-right{position:relative}
+.hero-card-main{background:rgba(11,24,45,.86);border:1px solid rgba(96,165,250,.16);border-radius:20px;padding:1.75rem;box-shadow:0 40px 80px rgba(0,0,0,.28),var(--shadow-blue);position:relative;overflow:hidden;backdrop-filter:blur(18px)}
+.hero-card-main::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-main)}
+.hc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.hc-label{font-size:.72rem;font-weight:600;color:var(--t2);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.1em}
+.hc-live{display:flex;align-items:center;gap:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:100px;padding:.25rem .75rem;font-size:.72rem;font-weight:600;color:var(--c-green)}
+.hc-live span{width:6px;height:6px;border-radius:50%;background:var(--c-green);animation:blink 1.2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.track-list{display:flex;flex-direction:column;gap:.6rem}
+.tl-item{display:flex;align-items:center;gap:.875rem;padding:.875rem 1rem;background:var(--surface);border:1px solid var(--b0);border-radius:11px;transition:all .2s;cursor:pointer}
+.tl-item:hover{border-color:var(--b2);background:var(--card2)}
+.tl-emoji{font-size:1.3rem;flex-shrink:0}
+.tl-info{flex:1}
+.tl-name{font-size:.88rem;font-weight:600;color:var(--t0);margin-bottom:.15rem}
+.tl-meta{font-size:.72rem;color:var(--t2);font-family:'IBM Plex Mono',monospace}
+.tl-price{font-size:.88rem;font-weight:700;color:var(--c1)}
+.float-badges{position:absolute;pointer-events:none}
+.fbadge{position:absolute;background:var(--card2);border:1px solid var(--b2);border-radius:12px;padding:.65rem 1rem;backdrop-filter:blur(12px);white-space:nowrap;font-size:.78rem;font-weight:500;box-shadow:var(--shadow-card)}
+.fbadge-cert{top:-30px;right:-20px;color:var(--c-amber)}
+.fbadge-student{bottom:20%;left:-50px;color:var(--c-green)}
+.fbadge-hire{bottom:-25px;right:10%;color:var(--c1)}
+
+/* SECTION BASE */
+section{padding:6rem 2rem}
+@media(max-width:960px){section{padding:4rem 1.5rem}}
+@media(max-width:640px){section{padding:3rem 1rem}}
+@media(max-width:480px){section{padding:2.5rem 0.75rem}}
+.wrap{max-width:1380px;margin:0 auto}
+.s-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c1);margin-bottom:.875rem;display:flex;align-items:center;gap:.6rem}
+.s-eyebrow::before{content:'';width:28px;height:1px;background:var(--c1)}
+.s-title{font-size:clamp(1.9rem,3.5vw,3rem);font-weight:900;color:var(--t0);margin-bottom:1rem;letter-spacing:-.04em}
+.s-title .g{background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.s-sub{font-size:1rem;color:var(--t2);max-width:580px;line-height:1.75}
+.s-head{margin-bottom:3.5rem}
+
+/* MARQUEE */
+.marquee-section{padding:2rem 0;background:var(--deep);border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);overflow:hidden}
+.marquee-track{display:flex;gap:3rem;animation:marquee 25s linear infinite;width:max-content}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;gap:.75rem;font-size:.85rem;font-weight:600;color:var(--t2);white-space:nowrap}
+.marquee-item span{font-size:1.1rem}
+
+/* TRACKS */
+#tracks{background:linear-gradient(180deg,var(--void),var(--deep))}
+.tracks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.25rem}
+.track-card{background:var(--card);border:1px solid var(--b1);border-radius:18px;padding:1.75rem;cursor:pointer;position:relative;overflow:hidden;transition:all .3s;group:true}
+.track-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(96,165,250,0.04),rgba(139,92,246,0.03));opacity:0;transition:opacity .3s}
+.track-card:hover{border-color:var(--b2);transform:translateY(-5px);box-shadow:var(--shadow-blue),var(--shadow-card)}
+.track-card:hover::after{opacity:1}
+.tc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.25rem}
+.tc-icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;flex-shrink:0;position:relative;z-index:1}
+.tc-badge{font-family:'IBM Plex Mono',monospace;font-size:.65rem;padding:.2rem .6rem;border-radius:5px;font-weight:500}
+.badge-popular{background:rgba(245,158,11,.12);color:var(--c-amber);border:1px solid rgba(245,158,11,.25)}
+.badge-new{background:rgba(16,185,129,.1);color:var(--c-green);border:1px solid rgba(16,185,129,.25)}
+.tc-name{font-size:1.08rem;font-weight:800;color:var(--t0);margin-bottom:.4rem;letter-spacing:-.02em;position:relative;z-index:1}
+.tc-desc{font-size:.83rem;color:var(--t2);line-height:1.65;margin-bottom:1.25rem;position:relative;z-index:1}
+.tc-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.25rem;position:relative;z-index:1}
+.tc-tag{background:var(--b0);border:1px solid var(--b1);border-radius:5px;padding:.18rem .55rem;font-size:.68rem;color:var(--c1);font-family:'IBM Plex Mono',monospace;font-weight:500}
+.tc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:1.25rem;border-top:1px solid var(--b0);position:relative;z-index:1}
+.tc-meta{font-size:.78rem;color:var(--t2)}
+.tc-meta strong{color:var(--t0);display:block;font-size:.88rem;margin-bottom:.1rem}
+.tc-price{font-size:1.2rem;font-weight:900;color:var(--c1)}
+.tc-price sup{font-size:.65rem;font-weight:600;vertical-align:top;margin-top:4px;display:inline-block}
+.tc-enroll{display:inline-flex;align-items:center;gap:5px;background:var(--b0);border:1px solid var(--b1);border-radius:8px;padding:.4rem .875rem;font-size:.78rem;font-weight:600;color:var(--c1);transition:all .2s}
+.track-card:hover .tc-enroll{background:var(--c2);border-color:var(--c2);color:#fff}
+
+/* WORKFLOW */
+#workflow{background:var(--deep);position:relative;overflow:hidden}
+#workflow::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(59,130,246,.05),transparent 70%)}
+.workflow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;position:relative;z-index:1}
+@media(max-width:900px){.workflow-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.workflow-grid{grid-template-columns:1fr}}
+.wf-card{background:var(--card);border:1px solid var(--b1);border-radius:16px;padding:1.5rem;text-align:center;position:relative;transition:all .3s}
+.wf-card:hover{border-color:var(--b2);transform:translateY(-4px);box-shadow:var(--shadow-blue)}
+.wf-num{width:52px;height:52px;border-radius:50%;background:var(--grad-main);display:grid;place-items:center;font-size:1.05rem;font-weight:900;color:#fff;margin:0 auto 1rem;box-shadow:0 0 20px rgba(59,130,246,.35)}
+.wf-title{font-size:.95rem;font-weight:700;color:var(--t0);margin-bottom:.5rem}
+.wf-desc{font-size:.8rem;color:var(--t2);line-height:1.6}
+.wf-connector{position:absolute;top:40px;right:-13px;width:26px;height:2px;background:linear-gradient(90deg,var(--c2),var(--c-violet));z-index:2;display:none}
+@media(min-width:900px){.wf-card:not(:nth-child(4n)) .wf-connector{display:block}}
+
+/* INSTRUCTORS */
+#instructors{background:linear-gradient(180deg,var(--deep),var(--void))}
+.instructors-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.inst-card{background:var(--card);border:1px solid var(--b1);border-radius:20px;overflow:hidden;transition:all .3s;position:relative}
+.inst-card:hover{border-color:var(--b2);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.6),var(--shadow-blue)}
+.inst-card-top{position:relative;height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.inst-card-top::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,var(--card) 100%)}
+.inst-photo{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .4s}
+.inst-card:hover .inst-photo{transform:scale(1.05)}
+.inst-company-badge{position:absolute;top:12px;right:12px;z-index:2;padding:.3rem .7rem;border-radius:8px;font-size:.68rem;font-weight:700;font-family:'IBM Plex Mono',monospace;letter-spacing:.05em}
+.badge-bel{background:rgba(16,185,129,.2);border:1px solid rgba(16,185,129,.4);color:var(--c-green)}
+.badge-google{background:rgba(234,67,53,.2);border:1px solid rgba(234,67,53,.4);color:#ef4444}
+.badge-tcs{background:rgba(59,130,246,.2);border:1px solid rgba(59,130,246,.4);color:var(--c1)}
+.badge-infosys{background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.4);color:#a78bfa}
+.inst-body{padding:1.5rem}
+.inst-name{font-size:1.1rem;font-weight:800;color:var(--t0);margin-bottom:.2rem;letter-spacing:-.02em}
+.inst-role{font-size:.82rem;color:var(--c1);font-weight:600;margin-bottom:.25rem}
+.inst-company{font-size:.78rem;color:var(--t2);margin-bottom:1rem;display:flex;align-items:center;gap:.4rem}
+.inst-company::before{content:'🏢';font-size:.75rem}
+.inst-skills{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.25rem}
+.inst-skill{background:var(--b0);border:1px solid var(--b1);border-radius:5px;padding:.2rem .55rem;font-size:.68rem;color:var(--c1);font-family:'IBM Plex Mono',monospace}
+.inst-footer{display:flex;gap:.75rem}
+.inst-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:.55rem;border-radius:9px;font-size:.78rem;font-weight:600;text-decoration:none;transition:all .2s}
+.inst-btn-li{background:rgba(59,130,246,.1);border:1px solid var(--b1);color:var(--c1)}
+.inst-btn-li:hover{background:var(--c2);border-color:var(--c2);color:#fff}
+.inst-btn-msg{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);color:var(--c-green)}
+.inst-btn-msg:hover{background:var(--c-green);color:#fff}
+.inst-exp-tag{position:absolute;bottom:188px;left:12px;z-index:2;background:rgba(1,5,13,.85);border:1px solid var(--b2);border-radius:7px;padding:.25rem .6rem;font-size:.68rem;font-weight:600;color:var(--t0);font-family:'IBM Plex Mono',monospace}
+
+/* PROJECTS */
+#projects{background:var(--void)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:1.25rem}
+.proj-card{background:var(--card);border:1px solid var(--b1);border-radius:18px;overflow:hidden;transition:all .3s}
+.proj-card:hover{border-color:var(--b2);transform:translateY(-5px);box-shadow:var(--shadow-card),var(--shadow-blue)}
+.proj-thumb{height:150px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.proj-thumb-icon{font-size:3rem;position:relative;z-index:1}
+.proj-thumb-bg{position:absolute;inset:0}
+.proj-body{padding:1.5rem}
+.proj-name{font-size:1rem;font-weight:700;color:var(--t0);margin-bottom:.4rem;letter-spacing:-.01em}
+.proj-desc{font-size:.82rem;color:var(--t2);line-height:1.65;margin-bottom:1rem}
+.proj-stack{display:flex;flex-wrap:wrap;gap:.3rem}
+.p-tag{background:var(--b0);border:1px solid var(--b1);border-radius:5px;padding:.15rem .5rem;font-size:.66rem;color:var(--c1);font-family:'IBM Plex Mono',monospace}
+
+/* CERT */
+#certifications{background:linear-gradient(180deg,var(--void),var(--deep))}
+.cert-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:900px){.cert-wrap{grid-template-columns:1fr}}
+.cert-card{background:linear-gradient(145deg,#061224,#0a1929);border:1px solid var(--b2);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;box-shadow:var(--shadow-card),var(--shadow-blue)}
+.cert-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-main)}
+.cert-card::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2360a5fa' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.cert-header-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--b1)}
+.cert-org{font-size:1rem;font-weight:800;color:var(--t0);letter-spacing:-.02em}
+.cert-org span{background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cert-seal-icon{width:54px;height:54px;border-radius:50%;background:var(--grad-gold);display:grid;place-items:center;font-size:1.4rem;box-shadow:0 0 20px rgba(245,158,11,.4)}
+.cert-content-area{text-align:center;padding:1rem 0 1.5rem}
+.cert-presented{font-size:.75rem;color:var(--t2);font-family:'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem}
+.cert-name{font-family:'Crimson Pro',serif;font-size:2.4rem;font-weight:600;color:var(--t0);margin-bottom:.5rem}
+.cert-program-line{font-size:.88rem;color:var(--t2);line-height:1.6;margin-bottom:1.5rem}
+.cert-program-line strong{color:var(--c1);font-weight:600}
+.cert-id-box{display:inline-flex;align-items:center;gap.5rem;background:var(--b0);border:1px solid var(--b1);border-radius:8px;padding:.4rem .875rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--t2)}
+.cert-id-box span{color:var(--c1);font-weight:500}
+.cert-footer-row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--b1)}
+.cert-sig{text-align:center}
+.sig-line{width:100px;height:1px;background:var(--b2);margin:0 auto .4rem}
+.sig-name{font-size:.78rem;font-weight:600;color:var(--t0)}
+.sig-title{font-size:.65rem;color:var(--t2)}
+.cert-features-col{display:flex;flex-direction:column;gap:1rem}
+.cf-row{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--card);border:1px solid var(--b1);border-radius:14px;transition:all .2s}
+.cf-row:hover{border-color:var(--b2)}
+.cf-ico{font-size:1.5rem;flex-shrink:0}
+.cf-content-title{font-size:.9rem;font-weight:700;color:var(--t0);margin-bottom:.3rem}
+.cf-content-desc{font-size:.8rem;color:var(--t2);line-height:1.6}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--deep)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.testi-card{background:var(--card);border:1px solid var(--b1);border-radius:18px;padding:1.75rem;transition:all .3s;position:relative;overflow:hidden}
+.testi-card::before{content:'"';position:absolute;top:.5rem;right:1.25rem;font-family:'Crimson Pro',serif;font-size:5rem;color:var(--b1);line-height:1;pointer-events:none}
+.testi-card:hover{border-color:var(--b2);transform:translateY(-4px)}
+.t-stars{color:var(--c-amber);font-size:.9rem;margin-bottom:1rem;letter-spacing:.1em}
+.t-text{font-size:.88rem;color:var(--t2);line-height:1.75;margin-bottom:1.5rem;position:relative;z-index:1;font-style:italic;font-family:'Crimson Pro',serif;font-size:1rem}
+.t-author{display:flex;align-items:center;gap:.875rem}
+.t-ava{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.95rem;color:#fff;flex-shrink:0}
+.t-author-name{font-size:.9rem;font-weight:700;color:var(--t0)}
+.t-author-role{font-size:.75rem;color:var(--c1);font-weight:500;margin-top:.1rem}
+.t-company-tag{display:inline-block;margin-top:.35rem;font-size:.68rem;font-family:'IBM Plex Mono',monospace;color:var(--t2);background:var(--b0);padding:.15rem .5rem;border-radius:4px}
+
+/* PRICING */
+#pricing{background:linear-gradient(180deg,var(--deep),var(--void))}
+.pricing-intro{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:1rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.25rem}
+.price-card{background:var(--card);border:1px solid var(--b1);border-radius:20px;padding:2rem;position:relative;transition:all .3s;overflow:hidden}
+.price-card.hot{border-color:var(--c2);background:linear-gradient(145deg,var(--card),#0b1e38)}
+.price-card.hot::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-main)}
+.price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card),var(--shadow-blue);border-color:var(--b2)}
+.pc-popular{position:absolute;top:-1px;right:2rem;background:var(--grad-main);color:#fff;font-size:.65rem;font-weight:700;padding:.3rem .75rem;border-radius:0 0 8px 8px;letter-spacing:.04em;text-transform:uppercase}
+.pc-track-icon{font-size:1.75rem;margin-bottom:1rem}
+.pc-plan{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--t2);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.35rem}
+.pc-name{font-size:1.08rem;font-weight:800;color:var(--t0);margin-bottom:1.25rem;letter-spacing:-.02em}
+.pc-price-row{display:flex;align-items:baseline;gap:.25rem;margin-bottom:.25rem}
+.pc-curr{font-size:.9rem;color:var(--t2);font-weight:500}
+.pc-amount{font-size:2.4rem;font-weight:900;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.04em}
+.pc-orig{font-size:.8rem;color:var(--t3);text-decoration:line-through;margin-left:.5rem}
+.pc-dur{font-size:.78rem;color:var(--c-green);font-weight:600;font-family:'IBM Plex Mono',monospace;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--b1)}
+.pc-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.75rem}
+.pc-features li{font-size:.82rem;color:var(--t1);display:flex;align-items:flex-start;gap:.6rem}
+.pc-features li::before{content:'✓';color:var(--c-green);font-weight:700;flex-shrink:0;margin-top:.05rem}
+.pc-btn{display:block;text-align:center;padding:.8rem;border-radius:11px;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .3s;font-family:'Outfit',sans-serif}
+.pc-btn-solid{background:var(--grad-main);color:#fff;box-shadow:0 4px 20px rgba(59,130,246,.3)}
+.pc-btn-solid:hover{box-shadow:0 8px 35px rgba(59,130,246,.55);transform:translateY(-1px)}
+.pc-btn-outline{background:transparent;color:var(--c1);border:1px solid var(--b2)}
+.pc-btn-outline:hover{background:var(--b0)}
+.pc-savings{display:inline-block;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:5px;padding:.15rem .5rem;font-size:.65rem;font-weight:600;color:var(--c-green);font-family:'IBM Plex Mono',monospace;margin-bottom:1.5rem}
+
+/* WHY */
+#why{background:var(--void)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.1rem}
+.why-card{padding:1.5rem;background:var(--card);border:1px solid var(--b1);border-radius:16px;transition:all .3s}
+.why-card:hover{border-color:var(--b2);transform:translateY(-3px);box-shadow:var(--shadow-blue)}
+.why-icon{font-size:1.75rem;margin-bottom:.875rem}
+.why-title{font-size:.95rem;font-weight:700;color:var(--t0);margin-bottom:.4rem;letter-spacing:-.01em}
+.why-desc{font-size:.81rem;color:var(--t2);line-height:1.65}
+
+/* FAQ */
+#faq{background:var(--deep)}
+.faq-container{max-width:820px;margin:0 auto}
+.faq-item{border:1px solid var(--b1);border-radius:14px;overflow:hidden;margin-bottom:.75rem;transition:border-color .3s}
+.faq-item.active{border-color:var(--b2)}
+.faq-q{padding:1.25rem 1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-size:.95rem;font-weight:600;color:var(--t0);user-select:none;background:var(--card)}
+.faq-arr{width:26px;height:26px;border-radius:50%;background:var(--b0);display:grid;place-items:center;color:var(--c1);font-size:.75rem;transition:all .3s;flex-shrink:0}
+.faq-item.active .faq-arr{background:var(--c2);color:#fff;transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-inner{padding:0 1.5rem 1.25rem;font-size:.88rem;color:var(--t2);line-height:1.75;background:var(--card);border-top:1px solid var(--b0)}
+.faq-item.active .faq-a{max-height:220px}
+
+/* CONTACT */
+#contact{background:linear-gradient(180deg,var(--deep),var(--void))}
+.contact-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:3.5rem}
+@media(max-width:860px){.contact-layout{grid-template-columns:1fr}}
+.contact-left{display:flex;flex-direction:column;gap:1.25rem}
+.c-item{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--card);border:1px solid var(--b1);border-radius:14px;transition:all .2s}
+.c-item:hover{border-color:var(--b2)}
+.c-ico{width:42px;height:42px;border-radius:11px;background:var(--b0);border:1px solid var(--b1);display:grid;place-items:center;font-size:1rem;flex-shrink:0}
+.c-label{font-size:.7rem;font-family:'IBM Plex Mono',monospace;color:var(--t2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem}
+.c-val{font-size:.92rem;font-weight:500;color:var(--t0)}
+.map-box{background:var(--card);border:1px solid var(--b1);border-radius:14px;height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--t2);font-size:.85rem;margin-top:.5rem;overflow:hidden;position:relative}
+.map-box::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,.04),rgba(139,92,246,.04))}
+.contact-form{background:var(--card);border:1px solid var(--b1);border-radius:20px;padding:2.25rem}
+.form-title{font-size:1.25rem;font-weight:800;color:var(--t0);margin-bottom:1.75rem;letter-spacing:-.02em}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:560px){.f-row{grid-template-columns:1fr}}
+@media(max-width:500px){.contact-form{padding:1.5rem;border-radius:16px;}.form-title{font-size:1.1rem;margin-bottom:1.25rem;}}
+.f-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.f-group label{font-size:.72rem;font-family:'IBM Plex Mono',monospace;color:var(--t2);letter-spacing:.06em;text-transform:uppercase}
+.f-group input,.f-group select,.f-group textarea{background:var(--surface);border:1px solid var(--b1);border-radius:9px;padding:.75rem 1rem;color:var(--t0);font-size:.88rem;font-family:'Outfit',sans-serif;outline:none;transition:all .2s;width:100%;min-height:44px;}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--c1);box-shadow:0 0 0 3px rgba(96,165,250,.1)}
+.f-group input::placeholder,.f-group textarea::placeholder{color:var(--t3)}
+.f-group select option{background:var(--card)}
+.f-group textarea{height:110px;resize:vertical;min-height:110px;}
+.f-submit{width:100%;background:var(--grad-main);color:#fff;padding:.9rem;border-radius:11px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .3s;box-shadow:0 4px 20px rgba(59,130,246,.3);min-height:44px;}
+@media(max-width:500px){.f-submit{font-size:.9rem;padding:.85rem;}}
+.f-submit:hover{box-shadow:0 8px 40px rgba(59,130,246,.5);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--deep);border-top:1px solid var(--b1);padding:3.5rem 2rem 1.75rem}
+.footer-grid{max-width:1380px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-top{grid-template-columns:1fr}}
+.footer-brand p{font-size:.84rem;color:var(--t2);line-height:1.75;margin:.875rem 0 1.5rem;max-width:280px}
+.socials{display:flex;gap:.6rem}
+.social-a{width:36px;height:36px;border-radius:9px;background:var(--b0);border:1px solid var(--b1);display:grid;place-items:center;font-size:.8rem;color:var(--t2);text-decoration:none;transition:all .2s}
+.social-a:hover{border-color:var(--c1);color:var(--c1);background:var(--b0)}
+.f-col h4{font-size:.88rem;font-weight:700;color:var(--t0);margin-bottom:1rem;letter-spacing:-.01em}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.f-col ul a{font-size:.82rem;color:var(--t2);text-decoration:none;transition:color .2s}
+.f-col ul a:hover{color:var(--c1)}
+.footer-bottom{border-top:1px solid var(--b1);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.footer-bottom p{font-size:.78rem;color:var(--t3)}
+.footer-bot-links{display:flex;gap:1.5rem}
+.footer-bot-links a{font-size:.75rem;color:var(--t3);text-decoration:none;transition:color .2s}
+.footer-bot-links a:hover{color:var(--c1)}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal-bg.show{opacity:1;pointer-events:all}
+.modal-box{background:var(--card2);border:1px solid var(--b2);border-radius:22px;padding:2.5rem;max-width:600px;width:92%;max-height:86vh;overflow-y:auto;position:relative;transform:translateY(24px) scale(.97);transition:all .3s}
+.modal-bg.show .modal-box{transform:translateY(0) scale(1)}
+.modal-x{position:absolute;top:1.25rem;right:1.25rem;width:32px;height:32px;border-radius:8px;background:var(--b0);border:1px solid var(--b1);display:grid;place-items:center;cursor:pointer;color:var(--t2);font-size:.9rem;transition:all .2s}
+.modal-x:hover{color:var(--t0);border-color:var(--b2)}
+.m-track-label{display:inline-flex;align-items:center;gap:.5rem;background:var(--b0);border:1px solid var(--b1);border-radius:100px;padding:.25rem .875rem;font-size:.72rem;font-weight:600;color:var(--c1);font-family:'IBM Plex Mono',monospace;margin-bottom:1rem}
+.m-title{font-size:1.5rem;font-weight:800;color:var(--t0);margin-bottom:.5rem;letter-spacing:-.03em}
+.m-desc{font-size:.88rem;color:var(--t2);line-height:1.7;margin-bottom:1.75rem}
+.m-grid{display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-bottom:1.75rem}
+.m-info-box{background:var(--surface);border:1px solid var(--b1);border-radius:11px;padding:1rem}
+.m-info-l{font-size:.68rem;font-family:'IBM Plex Mono',monospace;color:var(--t2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
+.m-info-v{font-size:.92rem;font-weight:600;color:var(--t0)}
+.m-section{font-size:.82rem;font-weight:700;color:var(--t0);margin:1.5rem 0 .75rem;display:flex;align-items:center;gap:.5rem;letter-spacing:-.01em}
+.m-section::before{content:'';width:14px;height:2px;background:var(--c1)}
+.m-week{background:var(--surface);border:1px solid var(--b0);border-radius:9px;padding:.875rem 1rem;margin-bottom:.5rem}
+.m-week-l{font-size:.68rem;font-family:'IBM Plex Mono',monospace;color:var(--c1);margin-bottom:.2rem}
+.m-week-c{font-size:.84rem;color:var(--t1)}
+.outcome-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.outcome-chip{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:6px;padding:.25rem .7rem;font-size:.75rem;color:var(--c-green);font-weight:500}
+.outcome-chip::before{content:'✓ '}
+.m-enroll-btn{display:block;width:100%;text-align:center;background:var(--grad-main);color:#fff;padding:.9rem;border-radius:12px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .3s;margin-top:1.75rem;box-shadow:0 4px 20px rgba(59,130,246,.3)}
+.m-enroll-btn:hover{box-shadow:0 8px 40px rgba(59,130,246,.5);transform:translateY(-2px)}
+
+/* TOAST */
+.toast-wrap{position:fixed;bottom:2rem;right:2rem;z-index:9999;transform:translateX(200%);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.toast-wrap.show{transform:translateX(0)}
+.toast-box{background:var(--card2);border:1px solid var(--c-green);border-radius:14px;padding:1rem 1.5rem;display:flex;align-items:center;gap:.875rem;box-shadow:0 8px 40px rgba(0,0,0,.6);max-width:320px}
+.toast-ico{font-size:1.2rem;flex-shrink:0}
+.toast-msg{font-size:.88rem;font-weight:500;color:var(--t0)}
+
+/* ANIMATE */
+[data-aos]{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+[data-aos].aos-in{opacity:1;transform:translateY(0)}
+[data-aos][data-delay="1"]{transition-delay:.1s}
+[data-aos][data-delay="2"]{transition-delay:.2s}
+[data-aos][data-delay="3"]{transition-delay:.3s}
+[data-aos][data-delay="4"]{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:2rem;}
+  .hero-right{display:block;}
+  .hero-right .hero-card-main{padding:1.5rem;}
+  .hero-actions{justify-content:flex-start;}
+  .hero-kicker{font-size:.72rem;padding:.35rem .9rem;}
+  .hero-para{max-width:100%;font-size:1rem;}
+  .hero-stats{grid-template-columns:1fr 1fr;}
+  .fbadge{font-size:.75rem;padding:.6rem .95rem;}
+}
+@media(max-width:760px){
+  #home{padding:72px 1.5rem 0;}
+  .hero-inner{padding:3rem 0;}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:.9rem;}
+  .hero-actions .btn{width:100%;justify-content:center;}
+  .hero-stats{grid-template-columns:1fr;}
+  .hero-card-main{padding:1.5rem;}
+  .track-list{gap:.55rem;}
+  .tl-item{padding:.8rem .95rem;}
+  .fbadge{font-size:.72rem;padding:.55rem .9rem;}
+}
+@media(max-width:640px){
+  section{padding:4rem 1.25rem;}
+  .hero-inner{padding:2.5rem 0;}
+  .hero-card-main{border-radius:18px;}
+  .hero-stats{grid-template-columns:1fr;}
+  .hero-kicker{gap:8px;}
+  .hstat{padding:1rem;}
+}
+
+.payment-flow{padding:6rem 2rem;background:linear-gradient(180deg,rgba(1,7,18,.96),rgba(6,16,40,.99));}
+.payment-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;max-width:1380px;margin:0 auto;position:relative;z-index:2;}
+.payment-card{background:rgba(12,24,46,.92);border:1px solid rgba(96,165,250,.16);border-radius:24px;padding:2rem;box-shadow:0 28px 70px rgba(0,0,0,.32);backdrop-filter:blur(18px);}
+.payment-stage{font-size:.82rem;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.16em;color:rgba(96,165,250,.85);margin-bottom:1rem;font-weight:700;}
+.payment-summary{display:grid;gap:1rem;margin-bottom:1.5rem;}
+.payment-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;background:rgba(255,255,255,.03);border:1px solid rgba(96,165,250,.12);border-radius:14px;}
+.payment-row span{font-size:.85rem;color:var(--t2);}
+.payment-row strong{font-size:.96rem;color:var(--t0);}
+.payment-note{font-size:.92rem;color:var(--t2);line-height:1.8;margin-bottom:1.5rem;border-left:2px solid rgba(96,165,250,.35);padding-left:1rem;}
+.payment-methods{display:grid;gap:.8rem;margin-bottom:1.5rem;}
+.payment-methods label{display:flex;align-items:center;gap:.75rem;background:rgba(255,255,255,.03);border:1px solid rgba(96,165,250,.12);border-radius:14px;padding:1rem;cursor:pointer;transition:all .2s;}
+.payment-methods input{accent-color:#60a5fa;}
+.payment-methods label:hover{background:rgba(255,255,255,.06);border-color:rgba(96,165,250,.24);}
+.payment-detail{display:grid;gap:1rem;margin-top:1rem;}
+.payment-qr{display:grid;gap:1rem;align-items:center;justify-items:center;padding:1rem;border:1px solid rgba(96,165,250,.12);border-radius:18px;background:rgba(255,255,255,.03);}
+.payment-qr-label{font-size:.92rem;font-weight:700;color:var(--t0);text-align:center;}
+.payment-qr-code{width:160px;height:160px;border-radius:18px;background:#fff;display:grid;place-items:center;box-shadow:0 20px 50px rgba(0,0,0,.14);}
+.payment-qr-tip{font-size:.9rem;color:var(--t2);text-align:center;line-height:1.6;}
+.payment-card-inputs{display:grid;gap:.95rem;padding:1rem;border:1px solid rgba(96,165,250,.12);border-radius:18px;background:rgba(255,255,255,.03);}
+.payment-card-field{display:grid;gap:.35rem;}
+.payment-card-input{background:rgba(255,255,255,.06);border:1px solid rgba(96,165,250,.14);border-radius:12px;padding:.95rem 1rem;color:var(--t0);font-size:.95rem;outline:none;transition:all .2s;width:100%;}
+.payment-card-input:focus{border-color:rgba(96,165,250,.4);background:rgba(255,255,255,.09);}
+.payment-card-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.payment-card-tip{font-size:.9rem;color:var(--t2);line-height:1.7;}
+.payment-netbanking{padding:1rem;border:1px solid rgba(96,165,250,.12);border-radius:18px;background:rgba(255,255,255,.03);}
+.payment-netbanking .payment-note{margin:0;color:var(--t2);}
+.payment-bullets{list-style:none;display:grid;gap:.85rem;margin-top:1rem;padding:0;}
+.payment-bullets li{display:flex;align-items:flex-start;gap:.75rem;color:var(--t2);line-height:1.7;font-size:.92rem;}
+.payment-bullets li::before{content:'✓';color:var(--c1);font-weight:700;flex-shrink:0;margin-top:.1rem;}
+.payment-terms{background:rgba(255,255,255,.03);border:1px solid rgba(96,165,250,.12);border-radius:14px;padding:1.25rem;margin-top:1.5rem;color:var(--t2);line-height:1.75;font-size:.9rem;}
+.payment-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;}
+.payment-status{margin-top:2rem;max-width:860px;margin-left:auto;margin-right:auto;}
+.payment-success-card{background:rgba(9,20,44,.95);border:1px solid rgba(96,165,250,.2);border-radius:24px;padding:2rem;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.35);}
+.payment-success-card h3{font-size:1.8rem;color:#fff;margin-bottom:1rem;}
+.payment-success-card p{font-size:1rem;color:var(--t1);line-height:1.8;margin-bottom:1.5rem;}
+.payment-success-ticket{background:rgba(96,165,250,.08);border:1px dashed rgba(96,165,250,.3);border-radius:16px;padding:1rem 1.25rem;margin:1.5rem 0;color:var(--t0);}
+.hidden{display:none!important;}
+
+@media(max-width:960px){.payment-panel{grid-template-columns:1fr;}}
+@media(max-width:760px){.payment-flow{padding:3rem 1rem;}.payment-card{padding:1.25rem;border-radius:18px;}.payment-stage{font-size:.75rem;margin-bottom:.75rem;}.payment-summary{gap:.75rem;margin-bottom:1rem;}.payment-row{padding:.85rem 1rem;font-size:.9rem;flex-direction:column;align-items:flex-start;}.payment-row span{font-size:.8rem;}.payment-row strong{font-size:.9rem;}.payment-note{font-size:.85rem;padding-left:.75rem;margin-bottom:1rem;}.payment-methods{gap:.6rem;margin-bottom:1rem;}.payment-methods label{padding:.85rem;font-size:.9rem;border-radius:12px;}.payment-detail{gap:.85rem;margin-top:.85rem;}.payment-qr{padding:.75rem;border-radius:14px;}.payment-qr-label{font-size:.85rem;margin-bottom:.5rem;}.payment-qr-code{width:140px;height:140px;border-radius:14px;}.payment-qr-tip{font-size:.8rem;margin-top:.5rem;}.payment-card-inputs{padding:.85rem;gap:.75rem;border-radius:14px;}.payment-card-input{padding:.8rem .85rem;font-size:.9rem;border-radius:10px;}.payment-card-row{grid-template-columns:1fr;gap:.75rem;}.payment-card-tip{font-size:.8rem;margin-top:.5rem;}.payment-netbanking{padding:.85rem;border-radius:14px;}.payment-terminals{gap:.65rem;margin-top:.85rem;}.payment-bullets li{font-size:.85rem;gap:.55rem;}.payment-terms{padding:1rem;margin-top:1rem;font-size:.85rem;}.payment-cta{flex-direction:column;gap:.75rem;margin-top:1rem;}}
+@media(max-width:500px){.payment-flow{padding:2rem .75rem;}.payment-panel{gap:1rem;}.payment-card{padding:1rem;margin-bottom:1rem;border-radius:14px;}.payment-stage{font-size:.7rem;letter-spacing:.12em;margin-bottom:.6rem;}.payment-summary{gap:.6rem;margin-bottom:.85rem;}.payment-row{padding:.75rem .85rem;font-size:.85rem;border-radius:10px;}.payment-row span{font-size:.75rem;}.payment-row strong{font-size:.85rem;}.payment-note{font-size:.8rem;padding-left:.6rem;margin-bottom:.85rem;}.payment-methods{gap:.5rem;margin-bottom:.85rem;}.payment-methods label{padding:.75rem;font-size:.85rem;border-radius:10px;gap:.6rem;}.payment-detail{gap:.6rem;}.payment-qr{padding:.6rem;border-radius:12px;}.payment-qr-label{font-size:.8rem;}.payment-qr-code{width:120px;height:120px;border-radius:12px;}.payment-qr-tip{font-size:.75rem;}.payment-card-inputs{padding:.75rem;gap:.6rem;border-radius:12px;}.payment-card-input{padding:.75rem .75rem;font-size:.85rem;border-radius:8px;}.payment-card-row{gap:.6rem;}.payment-card-tip{font-size:.75rem;}.payment-netbanking{padding:.75rem;border-radius:12px;}.payment-bullets{gap:.5rem;margin-top:.6rem;}.payment-bullets li{font-size:.8rem;gap:.5rem;}.payment-terms{padding:.85rem;margin-top:.85rem;font-size:.8rem;border-radius:12px;}.payment-cta{gap:.5rem;margin-top:.85rem;}.payment-success-card{padding:1.25rem;border-radius:14px;}.payment-success-card h3{font-size:1.2rem;margin-bottom:.6rem;}.payment-success-card p{font-size:.85rem;margin-bottom:.85rem;}.payment-success-ticket{padding:.75rem .85rem;margin:.85rem 0;font-size:.8rem;}}
+
+/* Responsive refinement for contact/payment/completion */
+.contact-left, .contact-form, .payment-card, .payment-status, .footer-grid {min-width:0; width:100%; max-width:100%;}
+.c-item, .payment-row, .payment-methods label, .payment-card-row, .payment-card-inputs {min-width:0;}
+.c-val, .payment-row span, .payment-row strong, .payment-qr-tip, .payment-card-tip {overflow-wrap:anywhere; word-break:break-word;}
+.payment-card-row{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));}
+.payment-qr-code{max-width:220px;width:100%;aspect-ratio:1;}
+.payment-qr-code img{width:100%;height:100%;object-fit:contain;border-radius:inherit;}
+.payment-cta .btn{flex:1 1 220px;min-width:0;}
+.payment-success-card, .payment-success-ticket{width:100%;box-sizing:border-box;}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-wrap">
+    <a href="#home" class="logo">
+      <div class="logo-icon">TN</div>
+      <div class="logo-name">Tech<em>Nova</em> <span style="font-size:.72rem;font-weight:500;color:var(--t2);background:none;-webkit-text-fill-color:var(--t2)">Academy</span></div>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#tracks">Tracks</a></li>
+      <li><a href="#instructors">Mentors</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certificates</a></li>
+      <li><a href="#testimonials">Stories</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="certificate.html">Verify Certificate</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Apply Now →</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.getElementById('navMenu').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg">
+    <canvas id="aiCanvas"></canvas>
+    <div class="hb-grid"></div>
+    <div class="hb-glow1"></div>
+    <div class="hb-glow2"></div>
+    <div class="hb-glow3"></div>
+  </div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">
+        <div class="kicker-dot">✦</div>
+        <span class="kicker-text">Now Enrolling — Summer Batch 2026</span>
+      </div>
+      <h1 class="hero-h">
+        Industry-Oriented<br>
+        <span class="accent">Internship Programs</span><br>
+        for <span class="italic-serif">Future Engineers</span>
+      </h1>
+      <p class="hero-para">Learn from engineers working at Google, TCS, Infosys & BEL. Build real-world projects, receive 1-on-1 mentorship, and earn verified internship certificates recognized across India.</p>
+      <div class="hero-actions">
+        <a href="#tracks" class="btn btn-blue">Explore Programs →</a>
+        <a href="#contact" class="btn btn-ghost">Apply Now ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">2,200+</div><div class="hstat-l">Students Trained</div></div>
+        <div class="hstat"><div class="hstat-n">1,800+</div><div class="hstat-l">Projects Built</div></div>
+        <div class="hstat"><div class="hstat-n">5</div><div class="hstat-l">Internship Tracks</div></div>
+        <div class="hstat"><div class="hstat-n">Industry-Aligned</div><div class="hstat-l">Curriculum</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card-main">
+        <div class="hc-top">
+          <div class="hc-label">Active Programs</div>
+          <div class="hc-live"><span></span> Live Enrollments</div>
+        </div>
+        <div class="track-list">
+          <div class="tl-item"><span class="tl-emoji">🖥️</span><div class="tl-info"><div class="tl-name">Full Stack Development</div><div class="tl-meta">12 weeks · MERN Stack · Live</div></div><div class="tl-price">₹1,999</div></div>
+          <div class="tl-item"><span class="tl-emoji">🤖</span><div class="tl-info"><div class="tl-name">AI & Machine Learning</div><div class="tl-meta">10 weeks · Python · Live</div></div><div class="tl-price">₹1,799</div></div>
+          <div class="tl-item"><span class="tl-emoji">☁️</span><div class="tl-info"><div class="tl-name">Cloud Computing</div><div class="tl-meta">8 weeks · AWS/Azure · Live</div></div><div class="tl-price">₹1,499</div></div>
+          <div class="tl-item"><span class="tl-emoji">🔒</span><div class="tl-info"><div class="tl-name">Cyber Security</div><div class="tl-meta">8 weeks · Ethical Hacking · Live</div></div><div class="tl-price">₹1,499</div></div>
+          <div class="tl-item"><span class="tl-emoji">📊</span><div class="tl-info"><div class="tl-name">Data Science</div><div class="tl-meta">8 weeks · Python · Live</div></div><div class="tl-price">₹1,299</div></div>
+        </div>
+      </div>
+      <div class="float-badges">
+        <div class="fbadge fbadge-cert">🏆 Verified Certificate Issued</div>
+        <div class="fbadge fbadge-student">👥 2,200+ Students Trained</div>
+        <div class="fbadge fbadge-hire">🎯 Career Guidance & Interview Prep</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item"><span>🏢</span> Students from 200+ Colleges</div>
+    <div class="marquee-item"><span>✅</span> Industry Verified Certificates</div>
+    <div class="marquee-item"><span>📡</span> 100% Live Classes</div>
+    <div class="marquee-item"><span>🎯</span> Real Industry Projects</div>
+    <div class="marquee-item"><span>👨‍💻</span> Expert Mentors from BEL, Google, TCS, Infosys</div>
+    <div class="marquee-item"><span>⚡</span> Starting at Just ₹999</div>
+    <div class="marquee-item"><span>🌐</span> Remote & Flexible</div>
+    <div class="marquee-item"><span>💼</span> Portfolio Building Included</div>
+    <div class="marquee-item"><span>🔗</span> LinkedIn Certificate Integration</div>
+    <div class="marquee-item"><span>🏢</span> Students from 200+ Colleges</div>
+    <div class="marquee-item"><span>✅</span> Industry Verified Certificates</div>
+    <div class="marquee-item"><span>📡</span> 100% Live Classes</div>
+    <div class="marquee-item"><span>🎯</span> Real Industry Projects</div>
+    <div class="marquee-item"><span>👨‍💻</span> Expert Mentors from BEL, Google, TCS, Infosys</div>
+    <div class="marquee-item"><span>⚡</span> Starting at Just ₹999</div>
+    <div class="marquee-item"><span>🌐</span> Remote & Flexible</div>
+    <div class="marquee-item"><span>💼</span> Portfolio Building Included</div>
+    <div class="marquee-item"><span>🔗</span> LinkedIn Certificate Integration</div>
+  </div>
+</div>
+
+<!-- TRACKS -->
+<section id="tracks">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">Internship Tracks</div>
+      <h2 class="s-title">Choose Your <span class="g">Learning Path</span></h2>
+      <p class="s-sub">8 industry-aligned programs built with real-world curriculum, live mentorship, and project-based learning.</p>
+    </div>
+    <div class="tracks-grid" id="tracksGrid"></div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section id="workflow">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">How It Works</div>
+      <h2 class="s-title">Your <span class="g">8-Step Journey</span></h2>
+      <p class="s-sub">A structured, mentor-guided process from enrollment to your verified certificate.</p>
+    </div>
+    <div class="workflow-grid" id="wfGrid"></div>
+  </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section id="instructors">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">Industry Mentors</div>
+      <h2 class="s-title">Learn from <span class="g">Real Engineers</span></h2>
+      <p class="s-sub">Our mentors are active industry professionals — not just teachers. They bring real engineering problems, real solutions, and real connections to your internship.</p>
+    </div>
+    <div class="instructors-grid" id="instructorsGrid"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">Project Showcase</div>
+      <h2 class="s-title">Real Projects, <span class="g">Real Portfolio</span></h2>
+      <p class="s-sub">Graduate with portfolio-worthy projects deployed on real servers that impresss recruiters.</p>
+    </div>
+    <div class="proj-grid" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- CERTIFICATION -->
+<section id="certifications">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">Certification</div>
+      <h2 class="s-title">Earn an <span class="g">Industry-Recognized Certificate</span></h2>
+      <p class="s-sub">On completing a TechNova internship you receive a professional, verifiable certificate — a downloadable PDF with a unique certificate ID, mentor signature, and completion date. Easily share your achievement on LinkedIn and in job applications to highlight practical, project-based skills.</p>
+    </div>
+    <div class="cert-wrap">
+      <div class="cert-card" data-aos>
+        <div class="cert-header-row">
+          <div class="cert-org"><span>TechNova</span> Internship Academy</div>
+          <div class="cert-seal-icon">🏆</div>
+        </div>
+        <div class="cert-content-area">
+          <div class="cert-presented">Certificate of Completion</div>
+            <div class="cert-name">Priya Sharma</div>
+            <div class="cert-program-line">has successfully completed the<br><strong>Full Stack Development Internship Program</strong><br>— 12 Weeks · 150+ Hours · Project & Mentor Assessment</div>
+            <div class="cert-id-box">Certificate ID: <span>TNFS-2025-8821</span> &nbsp;·&nbsp; Issued: Nov 2025 &nbsp;·&nbsp; Verify at verify.technova.ac</div>
+        </div>
+        <div class="cert-footer-row">
+          <div class="cert-sig">
+            <div class="sig-line"></div>
+            <div class="sig-name">Shivam Vishwakarma</div>
+            <div class="sig-title">Software Developer, BEL</div>
+          </div>
+          <div style="text-align:center;font-size:2rem">🔏</div>
+          <div class="cert-sig">
+            <div class="sig-line"></div>
+            <div class="sig-name">Vikas Kumar</div>
+            <div class="sig-title">Software Engineer, Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="cert-features-col" data-aos data-delay="2">
+        <div class="cf-row">
+          <div class="cf-ico">🔐</div>
+          <div><div class="cf-content-title">Unique Certificate ID</div><div class="cf-content-desc">Each certificate carries a tamper-proof unique ID that recruiters can verify online at our official portal within seconds.</div></div>
+        </div>
+        <div class="cf-row">
+          <div class="cf-ico">🌐</div>
+          <div><div class="cf-content-title">Online Verification Portal</div><div class="cf-content-desc">Instant verification at verify.technova.ac — trusted by 200+ colleges and recruiting companies across India.</div></div>
+        </div>
+        <div class="cf-row">
+          <div class="cf-ico">✍️</div>
+          <div><div class="cf-content-title">Signed by Industry Engineers</div><div class="cf-content-desc">Your certificate is co-signed by your mentor — engineers from BEL, Google, TCS, and Infosys — adding real industry credibility.</div></div>
+        </div>
+        <div class="cf-row">
+          <div class="cf-ico">🔗</div>
+          <div><div class="cf-content-title">One-Click LinkedIn Add</div><div class="cf-content-desc">Add the certificate directly to your LinkedIn profile to maximize recruiter visibility and professional impact.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">Success Stories</div>
+      <h2 class="s-title">Students Who <span class="g">Made It</span></h2>
+      <p class="s-sub">Real outcomes from real students who transformed their careers through TechNova's programs.</p>
+    </div>
+    <div class="testi-grid" id="testiGrid"></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="pricing-intro">
+      <div>
+        <div class="s-eyebrow">Transparent Pricing</div>
+        <h2 class="s-title">Invest in Your <span class="g">Future</span></h2>
+        <p class="s-sub">No hidden fees. Full refund within 3 days. Starting at just ₹999.</p>
+      </div>
+      <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:12px;padding:1rem 1.5rem;text-align:right">
+        <div style="font-size:.75rem;color:var(--t2);font-family:'IBM Plex Mono',monospace">Starting from</div>
+        <div style="font-size:2rem;font-weight:900;color:var(--c-green)">₹999</div>
+        <div style="font-size:.75rem;color:var(--t2)">All-inclusive · No extra charges</div>
+      </div>
+    </div>
+    <div class="pricing-grid" id="pricingGrid"></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">Why TechNova</div>
+      <h2 class="s-title">Built for <span class="g">Real Careers</span></h2>
+      <p class="s-sub">Every feature is designed to maximize your learning and make you employment-ready.</p>
+    </div>
+    <div class="why-grid" id="whyGrid"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="s-head" style="text-align:center">
+      <div class="s-eyebrow" style="justify-content:center;margin-bottom:.875rem"><span style="width:28px;height:1px;background:var(--c1);display:block"></span>FAQ<span style="width:28px;height:1px;background:var(--c1);display:block"></span></div>
+      <h2 class="s-title">Questions? <span class="g">Answered.</span></h2>
+    </div>
+    <div class="faq-container" id="faqContainer"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">Enroll Today</div>
+      <h2 class="s-title">Start Your <span class="g">Journey</span></h2>
+      <p class="s-sub">Fill the form and our team will contact you within 24 hours with your enrollment details.</p>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-left" data-aos>
+        <div class="c-item"><div class="c-ico">📧</div><div><div class="c-label">Email</div><div class="c-val">hello@technova.academy</div></div></div>
+        <div class="c-item"><div class="c-ico">📞</div><div><div class="c-label">Phone / WhatsApp</div><div class="c-val">+91 98765 43210</div></div></div>
+        <div class="c-item"><div class="c-ico">💬</div><div><div class="c-label">WhatsApp Direct</div><div class="c-val">+91 87654 32109</div></div></div>
+        <div class="c-item"><div class="c-ico">🏢</div><div><div class="c-label">Office</div><div class="c-val">TechNova Innovation Hub, Sector 62, Noida, UP — 201309</div></div></div>
+        <div class="map-box"><div style="font-size:2rem">🗺️</div><div style="position:relative;z-index:1">TechNova Innovation Hub, Noida UP</div></div>
+        <div class="c-item" style="margin-top:0.75rem"><div class="c-ico">📚</div><div>
+          <div class="c-label">Knowledge Acquired</div>
+          <div class="c-val" style="font-size:.9rem;color:var(--t2);">Practical coding & system design, version control (Git), deployment workflows, unit testing, collaboration in Agile teams, and interview preparation with real project experience.</div>
+        </div></div>
+      </div>
+      <div class="contact-form" data-aos data-delay="2">
+        <div class="form-title">Apply for Internship</div>
+        <div class="f-row">
+          <div class="f-group"><label>First Name</label><input type="text" id="fn" placeholder="Priya"></div>
+          <div class="f-group"><label>Last Name</label><input type="text" id="ln" placeholder="Sharma"></div>
+        </div>
+        <div class="f-group"><label>Email Address</label><input type="email" id="fe" placeholder="priya@gmail.com"></div>
+        <div class="f-group"><label>Phone Number</label><input type="tel" id="fp" placeholder="+91 98765 43210"></div>
+        <div class="f-group"><label>College / University</label>
+          <select id="fc" class="payment-card-input">
+            <option value="" disabled selected>Select your college / university</option>
+          </select>
+        </div>
+        <div class="f-row">
+          <div class="f-group"><label>Course</label><select id="fco"><option value="">Select Course</option><option>B.Tech CSE</option><option>B.Tech IT</option><option>BCA</option><option>MCA</option><option>B.Sc CS</option><option>Other Engineering</option></select></div>
+          <div class="f-group"><label>Year</label><select id="fy"><option value="">Year</option><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option><option>Graduate</option></select></div>
+        </div>
+        <div class="f-group"><label>Internship Track</label><select id="ft"><option value="">Select Track</option><option>Frontend Development</option><option>Backend Development</option><option>Full Stack Development</option><option>AI & Machine Learning</option><option>Data Science</option><option>Robotics & IoT</option><option>Cyber Security</option><option>Cloud Computing</option></select></div>
+        <div class="f-group"><label>Message (Optional)</label><textarea id="fm" placeholder="Tell us about your background and career goals..."></textarea></div>
+        <button class="f-submit" onclick="handleSubmit()">Submit Application →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="paymentFlow" class="payment-flow hidden">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="s-eyebrow">Secure Enrollment</div>
+      <h2 class="s-title">Finish Payment & Join the Batch</h2>
+      <p class="s-sub">Review your application details, accept the enrollment terms, and complete payment to activate your internship seat.</p>
+    </div>
+    <div class="payment-panel">
+      <div class="payment-card" id="paymentCard">
+        <div class="payment-stage">Step 1: Confirm Your Details</div>
+        <div class="payment-summary">
+          <div class="payment-row"><span>Applicant</span><strong id="paymentApplicant">—</strong></div>
+          <div class="payment-row"><span>Email</span><strong id="paymentEmail">—</strong></div>
+          <div class="payment-row"><span>Selected Track</span><strong id="paymentCourse">—</strong></div>
+          <div class="payment-row"><span>Total Payable</span><strong id="paymentAmount">₹999</strong></div>
+          <div id="paymentDiscountRow" class="payment-row hidden"><span>Discount</span><strong id="paymentDiscount">-₹0</strong></div>
+          <div id="paymentDiscountedAmountRow" class="payment-row hidden"><span>Payable after coupon</span><strong id="paymentDiscountedAmount">₹999</strong></div>
+        </div>
+        <div class="payment-card-row" style="align-items:center;gap:.75rem;margin:1rem 0;flex-wrap:wrap;">
+          <input id="couponInput" type="text" class="payment-card-input" placeholder="Enter private coupon code" style="flex:1;min-width:180px;max-width:320px;" />
+          <button type="button" class="btn btn-ghost" style="flex:0 0 auto;min-width:130px;" onclick="applyCoupon()">Apply</button>
+        </div>
+        <div id="couponMessage" class="payment-note" style="margin-top:0.5rem;font-size:.95rem;color:#a5b4fc;">Have a private coupon? Enter it above.</div>
+        <div class="payment-note">Your seat is reserved only after successful payment. We use secure payment methods and protect your information with industry-grade privacy controls.</div>
+        <div class="payment-methods">
+          <label><input type="radio" name="payMethod" value="UPI" checked> Razorpay / UPI / QR Code</label>
+          <label><input type="radio" name="payMethod" value="Credit Card"> Credit / Debit Card</label>
+          <label><input type="radio" name="payMethod" value="NetBanking"> Net Banking / Wallet</label>
+        </div>
+        <div id="paymentDetail" class="payment-detail">
+          <div id="paymentQR" class="payment-qr">
+            <div class="payment-qr-label">Scan the QR code to pay instantly</div>
+            <div class="payment-qr-code">
+              <img id="razorpayQrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=YOUR_UPI_ID@okaxis&pn=TechNova%20Academy&am=999" alt="Razorpay UPI QR code" style="width:140px;height:140px;border-radius:18px;object-fit:cover;"/>
+            </div>
+            <div class="payment-qr-tip">Open Google Pay, PhonePe or Razorpay app and scan the QR or pay to UPI ID <strong id="paymentUpiId">yourupi@okaxis</strong>.</div>
+          </div>
+          <div id="paymentCardFields" class="payment-card-inputs hidden">
+            <div class="payment-card-field">
+              <label>Cardholder Name</label>
+              <input type="text" id="cardName" class="payment-card-input" placeholder="Your name as on card">
+            </div>
+            <div class="payment-card-field">
+              <label>Card Number</label>
+              <input type="text" id="cardNumber" class="payment-card-input" placeholder="1234 5678 9012 3456" inputmode="numeric">
+            </div>
+            <div class="payment-card-row">
+              <div class="payment-card-field">
+                <label>Expiry</label>
+                <input type="text" id="cardExpiry" class="payment-card-input" placeholder="MM/YY" inputmode="numeric">
+              </div>
+              <div class="payment-card-field">
+                <label>CVC</label>
+                <input type="text" id="cardCvc" class="payment-card-input" placeholder="123" inputmode="numeric">
+              </div>
+            </div>
+            <div class="payment-card-tip">We support Visa, Mastercard, RuPay and UPI card payments securely through the Razorpay gateway.</div>
+          </div>
+          <div id="paymentNetBanking" class="payment-netbanking hidden">
+            <div class="payment-note">After you confirm payment, we will display secure netbanking or wallet instructions. Razorpay handles the payment collection and keeps your data safe.</div>
+          </div>
+        </div>
+        <div class="payment-cta">
+          <button class="btn btn-blue" onclick="confirmPayment()">Confirm & Pay <span id="paymentAmountLabel">₹999</span></button>
+          <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Edit Application</button>
+        </div>
+      </div>
+      <div class="payment-card">
+        <div class="payment-stage">Enrollment Policies</div>
+        <ul class="payment-bullets">
+          <li>Razorpay-powered checkout for secure UPI/QR and card payments.</li>
+          <li>Enrollment confirmed instantly after payment.</li>
+          <li>Course access delivered within 24 hours.</li>
+          <li>Full refund available within 3 days of payment.</li>
+          <li>WhatsApp group invite shared with enrolled students only.</li>
+          <li>No hidden fees. Your fee is final and transparent.</li>
+        </ul>
+        <div class="payment-terms">
+          <h4 style="margin-bottom:.75rem;color:var(--t0)">Disclaimer & Policy</h4>
+          <p>By completing payment, you agree to the TechNova enrollment terms, refund policy, and privacy notice. Your details are used only for enrollment, communication, and course delivery.</p>
+          <p style="margin-top:.85rem">If you need help at any stage, our support team is available on WhatsApp and email. Successful payment is required to receive the official join link for the WhatsApp batch group.</p>
+        </div>
+      </div>
+    </div>
+    <div id="paymentStatus" class="payment-status hidden"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="logo"><div class="logo-icon">TN</div><div class="logo-name" style="margin-left:12px">Tech<em>Nova</em></div></a>
+        <p>India's premier internship training platform. Real engineers, real projects, real careers — all starting from ₹999.</p>
+      </div>
+      <div class="f-col"><h4>Programs</h4><ul><li><a href="#tracks">Frontend Dev</a></li><li><a href="#tracks">Backend Dev</a></li><li><a href="#tracks">Full Stack</a></li><li><a href="#tracks">AI & ML</a></li><li><a href="#tracks">Data Science</a></li><li><a href="#tracks">Cyber Security</a></li></ul></div>
+      <div class="f-col"><h4>Company</h4><ul><li><a href="#why">About Us</a></li><li><a href="#instructors">Mentors</a></li><li><a href="#testimonials">Success Stories</a></li><li><a href="#certifications">Certificates</a></li><li><a href="#contact">Careers</a></li></ul></div>
+      <div class="f-col"><h4>Support</h4><ul><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Verify Certificate</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 TechNova Internship Academy. All rights reserved. Made with ❤️ for India's engineers.</p>
+      <div class="footer-bot-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal"><div class="modal-box" id="modalBox"><div class="modal-x" onclick="closeModal()">✕</div><div id="modalContent"></div></div></div>
+
+<!-- TOAST -->
+<div class="toast-wrap" id="toast"><div class="toast-box"><span class="toast-ico" id="toastIco">✅</span><span class="toast-msg" id="toastMsg">Done!</span></div></div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+// DATA
+const TRACKS = [
+  {id:1,name:"Frontend Development",icon:"🖥️",color:"linear-gradient(135deg,#60a5fa,#0ea5e9)",desc:"Master HTML, CSS, JavaScript, React & Next.js. Build stunning, responsive interfaces and deploy production apps.",tags:["HTML5","CSS3","JavaScript","React","Next.js"],duration:"8 Weeks",mode:"Live Online",fee:"999",origFee:"3,999",badge:"",curriculum:[{w:"Week 1–2",c:"HTML5 semantics, CSS3 Flexbox/Grid, Responsive Design"},{w:"Week 3–4",c:"JavaScript ES6+, DOM Manipulation, Fetch API"},{w:"Week 5–6",c:"React.js — Components, Hooks, Context, State Management"},{w:"Week 7–8",c:"Next.js — SSR, SSG, Routing, Vercel Deployment"}],outcomes:["Build pixel-perfect UIs","Master React ecosystems","Deploy live applications","Portfolio-ready projects"]},
+  {id:2,name:"Backend Development",icon:"⚙️",color:"linear-gradient(135deg,#8b5cf6,#6d28d9)",desc:"Build scalable APIs, manage databases, handle authentication. Become the engineer who powers the web.",tags:["Node.js","Express","MongoDB","MySQL","REST APIs"],duration:"8 Weeks",mode:"Live Online",fee:"999",origFee:"3,999",badge:"",curriculum:[{w:"Week 1–2",c:"Node.js internals, npm ecosystem, file system, async"},{w:"Week 3–4",c:"Express.js — REST APIs, routing, middleware, validation"},{w:"Week 5–6",c:"MongoDB with Mongoose, PostgreSQL basics, migrations"},{w:"Week 7–8",c:"JWT Auth, bcrypt, rate limiting, Docker & deploy"}],outcomes:["Design production REST APIs","Master database modeling","Implement secure auth","Deploy scalable backend"]},
+  {id:3,name:"Full Stack Development",icon:"🚀",color:"linear-gradient(135deg,#10b981,#059669)",desc:"The complete MERN stack. Build entire web applications from database to deployment, alone.",tags:["React","Node.js","MongoDB","Express","Deploy"],duration:"12 Weeks",mode:"Live Online",fee:"1,999",origFee:"7,999",badge:"popular",curriculum:[{w:"Week 1–3",c:"HTML, CSS, JavaScript fundamentals mastery"},{w:"Week 4–6",c:"React.js complete — Hooks, Router, State, Redux"},{w:"Week 7–9",c:"Node.js + Express + MongoDB full backend"},{w:"Week 10–12",c:"Full app integration, testing, CI/CD, cloud deployment"}],outcomes:["Build full MERN apps","End-to-end deployment","Auth & security layers","Job-ready full stack skills"]},
+  {id:4,name:"AI & Machine Learning",icon:"🤖",color:"linear-gradient(135deg,#f43f5e,#e11d48)",desc:"Dive into AI. Build ML models, deep learning networks, and real LLM-powered applications.",tags:["Python","Sklearn","TensorFlow","OpenAI","LLMs"],duration:"10 Weeks",mode:"Live Online",fee:"1,799",origFee:"6,499",badge:"new",curriculum:[{w:"Week 1–2",c:"Python for ML — NumPy, Pandas, data structures"},{w:"Week 3–5",c:"Scikit-learn — regression, classification, clustering"},{w:"Week 6–8",c:"Deep Learning — TensorFlow, CNNs, RNNs"},{w:"Week 9–10",c:"LLM Applications, OpenAI API, LangChain basics"}],outcomes:["Train ML models","Deep learning projects","Build AI-powered apps","LLM integration skills"]},
+  {id:5,name:"Data Science",icon:"📊",color:"linear-gradient(135deg,#f59e0b,#d97706)",desc:"Turn raw data into business insights. Master Python analytics, visualization, and statistical analysis.",tags:["Python","Pandas","Matplotlib","Seaborn","EDA"],duration:"8 Weeks",mode:"Live Online",fee:"1,299",origFee:"4,999",badge:"",curriculum:[{w:"Week 1–2",c:"Python basics for data — Jupyter, Colab, libraries"},{w:"Week 3–4",c:"Pandas & NumPy — data cleaning, wrangling, reshaping"},{w:"Week 5–6",c:"Matplotlib, Seaborn, Plotly — visual storytelling"},{w:"Week 7–8",c:"EDA capstone project — full business insights report"}],outcomes:["Data wrangling mastery","Visual storytelling","Statistical analysis","Business analytics skills"]},
+  {id:6,name:"Robotics & IoT",icon:"🦾",color:"linear-gradient(135deg,#a78bfa,#7c3aed)",desc:"Build smart systems. Program Arduino, Raspberry Pi, and deploy connected IoT solutions.",tags:["Arduino","Raspberry Pi","C++","MQTT","IoT"],duration:"8 Weeks",mode:"Live Online",fee:"1,499",origFee:"5,499",badge:"",curriculum:[{w:"Week 1–2",c:"Electronics basics — sensors, circuits, Ohm's law"},{w:"Week 3–4",c:"Arduino — programming, sensors, actuators, shields"},{w:"Week 5–6",c:"Raspberry Pi — Linux, Python GPIO, camera module"},{w:"Week 7–8",c:"IoT dashboard — MQTT, Node-RED, final automation project"}],outcomes:["Hardware programming","Sensor integration","IoT system design","Automation project portfolio"]},
+  {id:7,name:"Cyber Security",icon:"🔒",color:"linear-gradient(135deg,#f97316,#ea580c)",desc:"Learn ethical hacking, network penetration testing, and web application security from the ground up.",tags:["Kali Linux","Metasploit","Burp Suite","Networking","OWASP"],duration:"8 Weeks",mode:"Live Online",fee:"1,499",origFee:"5,999",badge:"",curriculum:[{w:"Week 1–2",c:"Security fundamentals, Linux, networking protocols, TCP/IP"},{w:"Week 3–4",c:"Ethical hacking — recon, scanning, Nmap, Metasploit"},{w:"Week 5–6",c:"Web security — SQL injection, XSS, CSRF, Burp Suite"},{w:"Week 7–8",c:"Penetration test + professional report writing"}],outcomes:["Ethical hacking foundation","Network analysis","Web pen testing","Security report writing"]},
+  {id:8,name:"Cloud Computing",icon:"☁️",color:"linear-gradient(135deg,#06b6d4,#0891b2)",desc:"Master AWS, Azure, DevOps, Docker and Kubernetes. Build and deploy cloud-native applications.",tags:["AWS","Azure","Docker","Kubernetes","CI/CD"],duration:"8 Weeks",mode:"Live Online",fee:"1,499",origFee:"5,499",badge:"",curriculum:[{w:"Week 1–2",c:"Cloud fundamentals, AWS console, EC2, S3, IAM, VPC"},{w:"Week 3–4",c:"RDS, Lambda, CloudFront, Route53, Auto Scaling"},{w:"Week 5–6",c:"DevOps — Git, Jenkins, GitHub Actions, CI/CD pipelines"},{w:"Week 7–8",c:"Docker, Kubernetes basics, Helm charts, cloud deployment"}],outcomes:["AWS services mastery","DevOps pipelines","Container orchestration","Production cloud deploy"]},
+];
+
+const INSTRUCTORS = [
+  {
+    name:"Shivam Vishwakarma",
+    role:"Software Developer",
+    company:"Bharat Electronics Limited (BEL)",
+    badge:"BEL",badgeClass:"badge-bel",
+    exp:"3+ Years",
+    skills:["HTML/CSS","JavaScript","React","Cyber Security","Python"],
+    photo:"mentors/shivam.png",
+    tracks:["Frontend Development","Cyber Security"],
+    linkedin:"#"
+  },
+  {
+    name:"Vikas Kumar",
+    role:"Software Engineer",
+    company:"Google",
+    badge:"Google",badgeClass:"badge-google",
+    exp:"3+ Years",
+    skills:["JavaScript","React","Python","ML","System Design"],
+    photo:"mentors/vikas.png",
+    tracks:["Frontend Development","AI & Machine Learning"],
+    linkedin:"#"
+  },
+  {
+    name:"Satyaprakash Yadav",
+    role:"Senior Software Engineer",
+    company:"Tata Consultancy Services (TCS)",
+    badge:"TCS",badgeClass:"badge-tcs",
+    exp:"5+ Years",
+    skills:["Java","Spring Boot","Microservices","AWS","SQL"],
+    photo:"mentors/satyaprakash.png",
+    tracks:["Backend Development","Cloud Computing"],
+    linkedin:"#"
+  },
+];
+
+const PROJECTS = [
+  {name:"E-Commerce Platform",desc:"Full MERN stack shop with cart, payments, admin dashboard, and real-time order tracking.",icon:"🛒",bg:"linear-gradient(135deg,rgba(96,165,250,.18),rgba(59,130,246,.1))",stack:["React","Node.js","MongoDB","Stripe"]},
+  {name:"AI Chatbot Assistant",desc:"OpenAI-powered intelligent assistant with context memory, PDF reader, and multi-language support.",icon:"🤖",bg:"linear-gradient(135deg,rgba(244,63,94,.16),rgba(239,68,68,.08))",stack:["Python","OpenAI","FastAPI","React"]},
+  {name:"Developer Portfolio",desc:"Animated personal portfolio with 3D effects, project showcase, and blog integration.",icon:"💼",bg:"linear-gradient(135deg,rgba(16,185,129,.15),rgba(5,150,105,.08))",stack:["Next.js","Tailwind","Framer Motion"]},
+  {name:"Real-Time Task Manager",desc:"Kanban board with drag-and-drop, real-time team collaboration, and Slack notifications.",icon:"📋",bg:"linear-gradient(135deg,rgba(245,158,11,.15),rgba(217,119,6,.08))",stack:["React","Socket.io","Node","Postgres"]},
+  {name:"Face Attendance System",desc:"OpenCV face recognition attendance with QR fallback, admin dashboard, and auto-reports.",icon:"📸",bg:"linear-gradient(135deg,rgba(167,139,250,.15),rgba(124,58,237,.08))",stack:["Python","OpenCV","Flask","SQLite"]},
+  {name:"ML Recommendation Engine",desc:"Collaborative filtering content recommendation with A/B testing and performance analytics.",icon:"🎯",bg:"linear-gradient(135deg,rgba(249,115,22,.15),rgba(234,88,12,.08))",stack:["Python","Sklearn","FastAPI","React"]},
+  {name:"IoT Smart Dashboard",desc:"Real-time sensor monitoring dashboard with threshold alerts, data visualization, and mobile app.",icon:"📡",bg:"linear-gradient(135deg,rgba(6,182,212,.15),rgba(8,145,178,.08))",stack:["Raspberry Pi","MQTT","React","InfluxDB"]},
+  {name:"Robotics Line Follower",desc:"Arduino-based autonomous robot with PID control, obstacle avoidance, and Bluetooth remote.",icon:"🦾",bg:"linear-gradient(135deg,rgba(139,92,246,.15),rgba(109,40,217,.08))",stack:["Arduino","C++","Bluetooth","Android"]},
+];
+
+const TESTIMONIALS = [
+  {name:"Aarav Sharma",role:"SDE at TCS",track:"Full Stack Graduate (DTU)",text:"I joined TechNova during my final year at Delhi Technological University. The hands-on MERN projects and weekly mentor feedback helped me build a production-ready portfolio. The mock interviews and resume reviews were especially useful — I felt confident during interviews and secured a software role at TCS shortly after.",stars:5,ava:"AS",grad:"linear-gradient(135deg,#60a5fa,#8b5cf6)"},
+  {name:"Meera Nair",role:"ML Engineer at Zoho",track:"AI/ML Graduate",text:"Vikas from Google was my mentor for the AI track. The depth of knowledge he brought from real production systems was unmatched. My LLM project became my headline in every interview.",stars:5,ava:"MN",grad:"linear-gradient(135deg,#f43f5e,#f97316)"},
+  {name:"Karan Malhotra",role:"Backend Dev at Razorpay",track:"Backend Graduate",text:"I was completely new to Node.js. Satyaprakash's teaching style was incredibly patient and structured. 8 weeks later I had a production API deployed and a certificate. Razorpay noticed.",stars:5,ava:"KM",grad:"linear-gradient(135deg,#8b5cf6,#6366f1)"},
+  {name:"Riya Singh",role:"Data Analyst at HDFC Bank",track:"Data Science Graduate",text:"The hands-on Pandas and visualization curriculum was exactly what college didn't teach. My EDA capstone project got more compliments in my HDFC interview than my entire degree.",stars:5,ava:"RS",grad:"linear-gradient(135deg,#f59e0b,#d97706)"},
+  {name:"Dev Patel",role:"Cloud Architect at Accenture",track:"Cloud Computing Graduate",text:"Real AWS console labs from day 1, not just slides. Satyaprakash brought actual enterprise architecture experience. Got an Accenture cloud offer 2 weeks after getting my TechNova certificate.",stars:5,ava:"DP",grad:"linear-gradient(135deg,#06b6d4,#0891b2)"},
+  {name:"Pooja Nambiar",role:"Security Analyst at Deloitte",track:"Cyber Security Graduate",text:"Ethical hacking from real attack scenarios. Shivam from BEL had worked on actual government security projects — that expertise made all the difference. Cleared CEH after this.",stars:5,ava:"PN",grad:"linear-gradient(135deg,#f97316,#ea580c)"},
+];
+
+const PRICING = [
+  {icon:"🖥️",plan:"Starter",name:"Frontend Development",fee:"999",orig:"3,999",save:"Save ₹3,000",dur:"8 Weeks · Live",features:["8 Live Weekly Classes","8 Assignments","Portfolio Project","Verified Certificate","Resume Review","6-Month Access"],hot:false},
+  {icon:"🚀",plan:"Most Popular",name:"Full Stack Development",fee:"1,999",orig:"7,999",save:"Save ₹6,000",dur:"12 Weeks · Live",features:["12 Live Weekly Classes","16 Assignments","MERN Stack App","Verified Certificate","Resume + LinkedIn","Interview Prep","Career Support","Priority Mentor Access"],hot:true},
+  {icon:"🤖",plan:"Advanced",name:"AI & Machine Learning",fee:"1,799",orig:"6,499",save:"Save ₹4,700",dur:"10 Weeks · Live",features:["10 Live Weekly Classes","12 Assignments","AI Capstone Project","Verified Certificate","Resume Review","Interview Prep","LLM Showcase"],hot:false},
+  {icon:"⚙️",plan:"Professional",name:"Backend Development",fee:"999",orig:"3,999",save:"Save ₹3,000",dur:"8 Weeks · Live",features:["8 Live Weekly Classes","8 Assignments","API Project","Verified Certificate","Resume Review","Career Support"],hot:false},
+  {icon:"☁️",plan:"Specialized",name:"Cloud Computing",fee:"1,499",orig:"5,499",save:"Save ₹4,000",dur:"8 Weeks · Live",features:["8 Live Weekly Classes","Hands-on AWS Labs","Cloud Project","Verified Certificate","Resume Review","DevOps Pipeline"],hot:false},
+];
+
+const FAQS = [
+  {q:"What is the duration of the internship programs?",a:"Programs range from 8–12 weeks depending on the track. Full Stack is 12 weeks, AI/ML is 10 weeks, and all other tracks are 8 weeks. Each week includes 1 live session, assignments, and project milestones."},
+  {q:"Are the classes live or recorded?",a:"All TechNova sessions are 100% LIVE via Zoom/Google Meet. Session recordings are available for 6 months in case you miss a class. We believe live interaction with industry mentors is non-negotiable for real learning."},
+  {q:"Is the certificate valid for college and job applications?",a:"Yes — our certificates carry unique verifiable IDs recognized by 200+ colleges, universities, and companies across India. Recruiters can verify at verify.technova.ac in seconds."},
+  {q:"What is the eligibility to enroll?",a:"Any B.Tech, BCA, MCA, B.Sc CS, or Engineering student from any year is eligible. Fresh graduates are also welcome. No prior coding experience is required for most tracks — just a laptop and dedication."},
+  {q:"What projects will I build during the internship?",a:"Each track includes a full industry-grade capstone project hosted live. Examples: Full Stack → E-Commerce App, AI → Chatbot, IoT → Smart Dashboard. All projects are added to GitHub and your portfolio."},
+  {q:"Are there installment payment options?",a:"Yes. We offer a 2-installment plan for tracks above ₹1,299 — 60% upfront and 40% in Week 4. Contact our team via WhatsApp for installment setup before enrolling."},
+  {q:"What is the refund policy?",a:"We offer a 100% refund within 3 days of enrollment if you're not satisfied for any reason. After that, a 50% refund is available up to Week 2. No refunds after Week 2 as significant mentor time has been invested."},
+];
+
+const WHY = [
+  {icon:"🏭",title:"Industry-Grade Projects",desc:"Build real production-level projects, not dummy tutorials. Your portfolio will stand out to any recruiter."},
+  {icon:"📡",title:"100% Live Classes",desc:"Every session is live with your mentor. No pre-recorded lectures. Ask questions, get answers, in real time."},
+  {icon:"🧠",title:"Engineers from BEL, Google, TCS, Infosys",desc:"Your mentors aren't just trainers — they're active engineers solving real problems at top companies every day."},
+  {icon:"📜",title:"Verified Internship Certificate",desc:"Industry-recognized certificate with unique ID, verified digitally — not a participation trophy."},
+  {icon:"💼",title:"Complete Portfolio",desc:"Graduate with 1 major project + assignments deployed live on GitHub and the web. Recruiters love this."},
+  {icon:"📝",title:"Resume & LinkedIn Review",desc:"Personalized, professional review of your resume and LinkedIn profile before you start applying."},
+  {icon:"🎯",title:"Interview Preparation",desc:"Mock technical interviews, HR rounds, and aptitude prep sessions included in most tracks."},
+  {icon:"🌐",title:"100% Remote & Flexible",desc:"Study from anywhere in India. Classes recorded for 6 months. Compatible with college schedule."},
+];
+
+const WORKFLOW = [
+  {n:1,title:"Select Internship",desc:"Browse 8 industry-aligned tracks and pick the one that matches your career goal."},
+  {n:2,title:"Register & Enroll",desc:"Fill the application form with your details and academic background."},
+  {n:3,title:"Pay Course Fee",desc:"Secure your seat with a one-time payment. Installment options available."},
+  {n:4,title:"Attend Live Classes",desc:"Weekly live sessions with expert mentors — interactive, not passive."},
+  {n:5,title:"Complete Assignments",desc:"Weekly tasks to reinforce learning and maintain accountability."},
+  {n:6,title:"Build Industry Project",desc:"Work on a real-world project under direct mentor supervision."},
+  {n:7,title:"Submit & Present",desc:"Present your final project to our expert panel for evaluation."},
+  {n:8,title:"Earn Certificate",desc:"Receive your verified digital internship certificate with unique ID."},
+];
+
+// RENDER
+function renderTracks(){
+  document.getElementById('tracksGrid').innerHTML = TRACKS.map(t=>`
+    <div class="track-card" onclick="openModal(${t.id})" data-aos>
+      <div class="tc-top">
+        <div class="tc-icon" style="background:${t.color}">${t.icon}</div>
+        ${t.badge==='popular'?'<span class="tc-badge badge-popular">⭐ Popular</span>':t.badge==='new'?'<span class="tc-badge badge-new">New</span>':''}
+      </div>
+      <div class="tc-name">${t.name}</div>
+      <div class="tc-desc">${t.desc}</div>
+      <div class="tc-tags">${t.tags.map(tg=>`<span class="tc-tag">${tg}</span>`).join('')}</div>
+      <div class="tc-footer">
+        <div>
+          <div class="tc-meta"><strong>${t.duration}</strong>Duration</div>
+        </div>
+        <div>
+          <div class="tc-meta"><strong>${t.mode}</strong>Format</div>
+        </div>
+        <div class="tc-price"><sup>₹</sup>${t.fee}</div>
+        <div class="tc-enroll">View Details →</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderWorkflow(){
+  document.getElementById('wfGrid').innerHTML = WORKFLOW.map((w,i)=>`
+    <div class="wf-card" data-aos data-delay="${Math.min(i%4+1,4)}">
+      <div class="wf-connector"></div>
+      <div class="wf-num">${w.n}</div>
+      <div class="wf-title">${w.title}</div>
+      <div class="wf-desc">${w.desc}</div>
+    </div>
+  `).join('');
+}
+
+function renderInstructors(){
+  document.getElementById('instructorsGrid').innerHTML = INSTRUCTORS.map(ins=>`
+    <div class="inst-card" data-aos>
+      <div class="inst-card-top">
+        <img class="inst-photo" src="${ins.photo}" alt="${ins.name}" onerror="this.src='https://api.dicebear.com/7.x/initials/svg?seed=${ins.name}&backgroundColor=0d1f38&textColor=60a5fa'">
+        <span class="inst-company-badge ${ins.badgeClass}">${ins.badge}</span>
+        <span class="inst-exp-tag">${ins.exp} Exp</span>
+      </div>
+      <div class="inst-body">
+        <div class="inst-name">${ins.name}</div>
+        <div class="inst-role">${ins.role}</div>
+        <div class="inst-company">${ins.company}</div>
+        <div class="inst-skills">${ins.skills.map(s=>`<span class="inst-skill">${s}</span>`).join('')}</div>
+        <div style="font-size:.72rem;color:var(--t2);font-family:'IBM Plex Mono',monospace;margin-bottom:1rem">Teaches: ${ins.tracks.join(' · ')}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderProjects(){
+  document.getElementById('projGrid').innerHTML = PROJECTS.map(p=>`
+    <div class="proj-card" data-aos>
+      <div class="proj-thumb"><div class="proj-thumb-bg" style="background:${p.bg}"></div><span class="proj-thumb-icon">${p.icon}</span></div>
+      <div class="proj-body">
+        <div class="proj-name">${p.name}</div>
+        <div class="proj-desc">${p.desc}</div>
+        <div class="proj-stack">${p.stack.map(s=>`<span class="p-tag">${s}</span>`).join('')}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderTestimonials(){
+  document.getElementById('testiGrid').innerHTML = TESTIMONIALS.map(t=>`
+    <div class="testi-card" data-aos>
+      <div class="t-stars">${'★'.repeat(t.stars)}</div>
+      <div class="t-text">"${t.text}"</div>
+      <div class="t-author">
+        <div class="t-ava" style="background:${t.grad}">${t.ava}</div>
+        <div>
+          <div class="t-author-name">${t.name}</div>
+          <div class="t-author-role">${t.role}</div>
+          <span class="t-company-tag">${t.track}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderPricing(){
+  document.getElementById('pricingGrid').innerHTML = PRICING.map(p=>`
+    <div class="price-card ${p.hot?'hot':''}" data-aos>
+      ${p.hot?'<div class="pc-popular">⭐ Most Popular</div>':''}
+      <div class="pc-track-icon">${p.icon}</div>
+      <div class="pc-plan">${p.plan}</div>
+      <div class="pc-name">${p.name}</div>
+      <div class="pc-price-row">
+        <span class="pc-curr">₹</span>
+        <span class="pc-amount">${p.fee}</span>
+        <span class="pc-orig">₹${p.orig}</span>
+      </div>
+      <div class="pc-savings">${p.save}</div>
+      <div class="pc-dur">⏱ ${p.dur}</div>
+      <ul class="pc-features">${p.features.map(f=>`<li>${f}</li>`).join('')}</ul>
+      <a href="#contact" class="pc-btn ${p.hot?'pc-btn-solid':'pc-btn-outline'}">Enroll Now →</a>
+    </div>
+  `).join('');
+}
+
+function renderWhy(){
+  document.getElementById('whyGrid').innerHTML = WHY.map(w=>`
+    <div class="why-card" data-aos>
+      <div class="why-icon">${w.icon}</div>
+      <div class="why-title">${w.title}</div>
+      <div class="why-desc">${w.desc}</div>
+    </div>
+  `).join('');
+}
+
+function renderFAQ(){
+  document.getElementById('faqContainer').innerHTML = FAQS.map((f,i)=>`
+    <div class="faq-item" id="faqItem${i}">
+      <div class="faq-q" onclick="toggleFAQ(${i})">${f.q}<span class="faq-arr">▾</span></div>
+      <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
+    </div>
+  `).join('');
+}
+
+function toggleFAQ(i){
+  const el = document.getElementById('faqItem'+i);
+  el.classList.toggle('active');
+}
+
+function openModal(id){
+  const t = TRACKS.find(x=>x.id===id);
+  if(!t) return;
+  document.getElementById('modalContent').innerHTML = `
+    <div class="m-track-label">${t.icon} ${t.name}</div>
+    <div class="m-title">${t.name} Internship</div>
+    <div class="m-desc">${t.desc}</div>
+    <div class="m-grid">
+      <div class="m-info-box"><div class="m-info-l">Duration</div><div class="m-info-v">⏱ ${t.duration}</div></div>
+      <div class="m-info-box"><div class="m-info-l">Mode</div><div class="m-info-v">📡 ${t.mode}</div></div>
+      <div class="m-info-box"><div class="m-info-l">Internship Fee</div><div class="m-info-v" style="color:var(--c1)">₹${t.fee}</div></div>
+      <div class="m-info-box"><div class="m-info-l">Certificate</div><div class="m-info-v" style="color:var(--c-green)">✓ Verified & Signed</div></div>
+    </div>
+    <div class="m-section">Weekly Curriculum</div>
+    ${t.curriculum.map(c=>`<div class="m-week"><div class="m-week-l">${c.w}</div><div class="m-week-c">${c.c}</div></div>`).join('')}
+    <div class="m-section">Learning Outcomes</div>
+    <div class="outcome-chips">${t.outcomes.map(o=>`<span class="outcome-chip">${o}</span>`).join('')}</div>
+    <div class="m-section">Technology Stack</div>
+    <div style="display:flex;flex-wrap:wrap;gap:.35rem">${t.tags.map(tg=>`<span class="tc-tag">${tg}</span>`).join('')}</div>
+    <button class="m-enroll-btn" onclick="closeModal();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),300)">Enroll in This Track →</button>
+  `;
+  document.getElementById('modal').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(){
+  document.getElementById('modal').classList.remove('show');
+  document.body.style.overflow='';
+}
+
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+
+let paymentSession = null;
+const RAZORPAY_KEY_ID = 'rzp_live_SX7eTf6XFXGOui'; // Replace with your live Razorpay key ID
+const RAZORPAY_UPI_ID = 'shivam5049@ybl'; // Replace with your actual UPI ID
+const RAZORPAY_QR_IMAGE_URL = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(`upi://pay?pa=${RAZORPAY_UPI_ID}&pn=TechNova Academy&cu=INR&am=999`)}`;
+
+function showToast(msg, ok=true){
+  document.getElementById('toastMsg').textContent = msg;
+  document.getElementById('toastIco').textContent = ok ? '✅' : '⚠️';
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3800);
+}
+
+function getDynamicUpiQrUrl(amount){
+  const upiData = `upi://pay?pa=${RAZORPAY_UPI_ID}&pn=TechNova Academy&cu=INR&am=${amount}`;
+  return `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(upiData)}`;
+}
+
+function updatePaymentQr(amount){
+  const qr = document.getElementById('razorpayQrImage');
+  const upiLabel = document.getElementById('paymentUpiId');
+  if(qr){
+    const qrUrl = amount > 0 ? getDynamicUpiQrUrl(amount) : 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=' + encodeURIComponent('Free Enrollment');
+    qr.src = qrUrl;
+  }
+  if(upiLabel){
+    upiLabel.textContent = `${RAZORPAY_UPI_ID}`;
+  }
+}
+
+function loadPaymentResources(){
+  updatePaymentQr(parseRupeeValue(paymentSession?.discountedFee ?? paymentSession?.fee ?? 999));
+}
+
+function getTrackDetails(trackName){
+  return TRACKS.find(t=>t.name===trackName) || {name:trackName,fee:'999',origFee:'3,999'};
+}
+
+function parseRupeeValue(value){
+  return parseInt(value?.toString().replace(/\D/g,''),10) || 0;
+}
+
+function formatRupees(value){
+  return `₹${value}`;
+}
+
+function calculateDiscountedFee(){
+  if(!paymentSession) return 0;
+  const base = parseRupeeValue(paymentSession.baseFee ?? paymentSession.fee);
+  const discount = paymentSession.discount || 0;
+  const discounted = Math.max(0, Math.round(base * (1 - discount / 100)));
+  paymentSession.discountedFee = discounted;
+  paymentSession.discountAmount = Math.max(0, base - discounted);
+  return discounted;
+}
+
+function updatePaymentDisplay(){
+  if(!paymentSession) return;
+  const discount = paymentSession.discount || 0;
+  const discounted = calculateDiscountedFee();
+  document.getElementById('paymentAmount').textContent = formatRupees(discounted);
+  document.getElementById('paymentAmountLabel').textContent = formatRupees(discounted);
+  updatePaymentQr(discounted);
+  const discountRow = document.getElementById('paymentDiscountRow');
+  const discountedRow = document.getElementById('paymentDiscountedAmountRow');
+  if(discount > 0){
+    discountRow.classList.remove('hidden');
+    discountedRow.classList.remove('hidden');
+    document.getElementById('paymentDiscount').textContent = `- ${formatRupees(paymentSession.discountAmount)}`;
+    document.getElementById('paymentDiscountedAmount').textContent = formatRupees(discounted);
+  } else {
+    discountRow.classList.add('hidden');
+    discountedRow.classList.add('hidden');
+  }
+}
+
+function applyCoupon(){
+  const input = document.getElementById('couponInput');
+  const message = document.getElementById('couponMessage');
+  if(!paymentSession){
+    showToast('Submit your application before using coupon.', false);
+    return;
+  }
+  const code = input ? input.value.trim().toUpperCase() : '';
+  if(!code){
+    message.textContent = 'Enter your private coupon code.';
+    showToast('Enter your private coupon code.', false);
+    return;
+  }
+  if(code === 'SHIVAM99' || code === 'SHIVAM100'){
+    paymentSession.discount = code === 'SHIVAM99' ? 99 : 100;
+    updatePaymentDisplay();
+    message.textContent = code === 'SHIVAM99' ? '99% private coupon applied. Your payable amount is updated.' : '100% private coupon applied. This enrollment is free.';
+    showToast('Coupon applied successfully.', true);
+    return;
+  }
+  paymentSession.discount = 0;
+  updatePaymentDisplay();
+  message.textContent = 'Invalid coupon code.';
+  showToast('Invalid coupon code.', false);
+}
+
+function showPaymentPage(session){
+  const section = document.getElementById('paymentFlow');
+  section.classList.remove('hidden');
+  paymentSession.baseFee = session.fee;
+  paymentSession.discount = 0;
+  paymentSession.discountedFee = parseRupeeValue(session.fee);
+  document.getElementById('paymentApplicant').textContent = `${session.fn} ${session.ln}`;
+  document.getElementById('paymentEmail').textContent = session.fe;
+  document.getElementById('paymentCourse').textContent = session.ft;
+  updatePaymentDisplay();
+  document.getElementById('paymentCard').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>section.scrollIntoView({behavior:'smooth'}),100);
+}
+function updatePaymentDetails(){
+  const active = document.querySelector('input[name="payMethod"]:checked');
+  const value = active ? active.value : 'UPI';
+  document.getElementById('paymentQR').classList.toggle('hidden', value !== 'UPI');
+  document.getElementById('paymentCardFields').classList.toggle('hidden', value !== 'Credit Card');
+  document.getElementById('paymentNetBanking').classList.toggle('hidden', value !== 'NetBanking');
+}
+
+function setupPaymentMethods(){
+  document.querySelectorAll('input[name="payMethod"]').forEach(el=>el.addEventListener('change', updatePaymentDetails));
+  loadPaymentResources();
+  updatePaymentDetails();
+  window.applyCouponCode = function(code){
+    if(!paymentSession) return false;
+    const upperCode = code.trim().toUpperCase();
+    if(upperCode === 'SHIVAM99' || upperCode === 'SHIVAM100'){
+      paymentSession.discount = upperCode === 'SHIVAM99' ? 99 : 100;
+      updatePaymentDisplay();
+      return true;
+    }
+    return false;
+  };
+}
+
+function populateCollegeDatalist(){
+  const colleges = [
+    'Galgotias University', 'Galgotias College of Engineering', 'KCC Institute of Technology & Management', 'KCC Institute',
+    'Sharda University', 'Amity University', 'Noida International University', 'Gautam Buddha University',
+    'G.L. Bajaj Institute of Technology and Management', 'IIMT College of Engineering', 'Meerut Institute of Engineering and Technology (MIET)',
+    'Chaudhary Charan Singh University (Meerut)', 'KMC Greater Noida', 'KCC Group of Institutions', 'Greater Noida Institute (example)',
+    'IMS Ghaziabad', 'GLA University', 'AKTU Affiliated College', 'Delhi Technological University', 'Harcourt Butler Technical University',
+    'JSS Academy', 'Maharishi Dayanand University', 'Indraprastha Institute of Information Technology', 'Delhi University',
+    'JIET Group', 'SRM University', 'Vellore Institute of Technology', 'Other College'
+  ];
+  const select = document.getElementById('fc');
+  if(!select) return;
+  select.innerHTML = [
+    '<option value="" disabled selected>Select your college / university</option>',
+    ...colleges.map(c=>`<option value="${c}">${c}</option>`)
+  ].join('');
+}
+
+function handleSubmit(){
+  const fn=document.getElementById('fn').value.trim();
+  const ln=document.getElementById('ln').value.trim();
+  const fe=document.getElementById('fe').value.trim();
+  const fp=document.getElementById('fp').value.trim();
+  const fc=document.getElementById('fc').value.trim();
+  const fco=document.getElementById('fco').value;
+  const fy=document.getElementById('fy').value;
+  const ft=document.getElementById('ft').value;
+  const fm=document.getElementById('fm').value.trim();
+  if(!fn||!fe||!ft){showToast('Please fill all required fields',false);return;}
+  const track = getTrackDetails(ft);
+  paymentSession = {fn,ln,fe,fp,fc,fco,fy,ft,fee:track.fee,origFee:track.origFee,message:fm,discount:0};
+  showToast(`Application received, ${fn}! Proceed to payment to confirm your seat.`,true);
+  showPaymentPage(paymentSession);
+}
+
+function confirmPayment(){
+  if(!paymentSession){showToast('Please submit the application first.',false);return;}
+  const selectedMethod = document.querySelector('input[name="payMethod"]:checked');
+  const methodName = selectedMethod ? selectedMethod.value : 'UPI';
+  if(methodName === 'Credit Card'){
+    const cardNumber = document.getElementById('cardNumber').value.trim().replace(/\D/g,'');
+    const cardName = document.getElementById('cardName').value.trim();
+    const cardExpiry = document.getElementById('cardExpiry').value.trim();
+    const cardCvc = document.getElementById('cardCvc').value.trim();
+    if(!cardName || cardNumber.length < 12 || !cardExpiry || cardCvc.length < 3){
+      showToast('Enter valid card details before proceeding.',false);
+      document.getElementById('paymentCardFields').scrollIntoView({behavior:'smooth'});
+      return;
+    }
+  }
+  if(typeof Razorpay === 'undefined'){
+    showToast('Razorpay checkout failed to load. Refresh the page and try again.',false);
+    return;
+  }
+  openRazorpayCheckout(methodName);
+}
+
+function openRazorpayCheckout(methodName){
+  const amountValue = paymentSession.discountedFee ?? paymentSession.fee;
+  const amount = Math.max(0, parseInt(amountValue.toString().replace(/\D/g,''),10)) * 100;
+  if(amount === 0){
+    paymentSuccessHandler(methodName, 'FREE-' + Date.now());
+    return;
+  }
+  const options = {
+    key: RAZORPAY_KEY_ID,
+    amount,
+    currency: 'INR',
+    name: 'TechNova Academy',
+    description: `${paymentSession.ft} Enrollment`,
+    image: '',
+    handler: function(response){
+      if(response && response.razorpay_payment_id){
+        paymentSuccessHandler(methodName, response.razorpay_payment_id);
+      } else {
+        showToast('Payment not completed. Please try again.', false);
+      }
+    },
+    prefill: {
+      name: `${paymentSession.fn} ${paymentSession.ln}`,
+      email: paymentSession.fe,
+      contact: paymentSession.fp || ''
+    },
+    notes: {
+      course: paymentSession.ft,
+      student: `${paymentSession.fn} ${paymentSession.ln}`
+    },
+    theme: {color:'#2563eb'},
+    method: {
+      upi: methodName === 'UPI',
+      card: methodName === 'Credit Card',
+      netbanking: methodName === 'NetBanking',
+      wallet: false,
+      emi: false
+    }
+  };
+  const rzp = new Razorpay(options);
+  rzp.open();
+}
+
+const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/FCi093sjGRqJW4yjr7CGU7';
+
+function paymentSuccessHandler(methodName, paymentId){
+  const status = document.getElementById('paymentStatus');
+  document.querySelector('.payment-panel').classList.add('hidden');
+  status.classList.remove('hidden');
+  const amountPaid = formatRupees(paymentSession.discountedFee ?? parseRupeeValue(paymentSession.fee));
+  status.innerHTML = `
+    <div class="payment-success-card">
+      <h3>Enrollment Confirmed</h3>
+      <p>Your payment for <strong>${paymentSession.ft}</strong> is complete. Your seat is now confirmed and your onboarding details are ready.</p>
+      <div class="payment-success-ticket">Payment method: ${methodName} · Amount paid: ${amountPaid} · Payment ID: ${paymentId}</div>
+      <p>Within minutes, you'll receive an email and WhatsApp message with your batch details. We are also adding you to the official student group automatically.</p>
+      <div class="payment-cta" style="justify-content:center;">
+        <button class="btn btn-blue" onclick="joinWhatsAppGroup()">Open WhatsApp Group →</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">Back to Home</button>
+      </div>
+    </div>
+  `;
+  joinWhatsAppGroup();
+}
+
+function joinWhatsAppGroup(){
+  window.open(WHATSAPP_GROUP_URL, '_blank');
+  showToast('Opening WhatsApp group. Welcome to the course community!');
+}
+
+// AOS
+const aosObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('aos-in');aosObs.unobserve(e.target)}});
+},{threshold:0.1});
+
+function initAOS(){document.querySelectorAll('[data-aos]').forEach(el=>aosObs.observe(el))}
+
+// NAV
+window.addEventListener('scroll',()=>{
+  const nav = document.getElementById('mainNav');
+  window.scrollY > 40 ? nav.classList.add('nav-scrolled') : nav.classList.remove('nav-scrolled');
+});
+
+const aiCanvas = document.getElementById('aiCanvas');
+const aiCtx = aiCanvas ? aiCanvas.getContext('2d') : null;
+let canvasWidth = 0;
+let canvasHeight = 0;
+let canvasDpr = window.devicePixelRatio || 1;
+const particles = [];
+const nodes = [];
+const mouse = {x:null,y:null,active:false};
+let lastTimestamp = 0;
+
+function resizeAI(){
+  if(!aiCanvas || !aiCtx) return;
+  canvasWidth = document.getElementById('home').clientWidth;
+  canvasHeight = document.getElementById('home').clientHeight;
+  aiCanvas.width = Math.max(1, Math.floor(canvasWidth * canvasDpr));
+  aiCanvas.height = Math.max(1, Math.floor(canvasHeight * canvasDpr));
+  aiCanvas.style.width = `${canvasWidth}px`;
+  aiCanvas.style.height = `${canvasHeight}px`;
+  aiCtx.setTransform(canvasDpr,0,0,canvasDpr,0,0);
+}
+
+function createAIElements(){
+  if(!aiCtx) return;
+  particles.length = 0;
+  nodes.length = 0;
+  const count = Math.max(60, Math.min(140, Math.floor(canvasWidth / 8)));
+  for(let i=0;i<count;i++){
+    particles.push({
+      x:Math.random()*canvasWidth,
+      y:Math.random()*canvasHeight,
+      vx:(Math.random()*1.2-0.6)*0.25,
+      vy:(Math.random()*1.2-0.6)*0.25,
+      size:Math.random()*1.8+0.9,
+      hue:210 + Math.random()*80,
+      alpha:0.22 + Math.random()*0.3,
+      drift:Math.random()*0.8+0.4
+    });
+  }
+  const nodeCount = Math.max(5, Math.min(9, Math.floor(canvasWidth / 240)));
+  for(let i=0;i<nodeCount;i++){
+    nodes.push({
+      x:Math.random()*canvasWidth,
+      y:Math.random()*canvasHeight,
+      baseX:0,
+      baseY:0,
+      phase:Math.random()*Math.PI*2,
+      radius:10 + Math.random()*14,
+      glow:16 + Math.random()*20,
+      hue:180 + Math.random()*100,
+      speed:0.18 + Math.random()*0.18,
+    });
+  }
+}
+
+function clamp(value,min,max){return Math.min(max,Math.max(min,value));}
+
+function updateAI(dt){
+  if(!aiCtx) return;
+  const attractionStrength = 0.09;
+  particles.forEach(p=>{
+    p.x += p.vx * p.drift * dt;
+    p.y += p.vy * p.drift * dt;
+    if(mouse.active){
+      const dx = mouse.x - p.x;
+      const dy = mouse.y - p.y;
+      const dist = Math.hypot(dx,dy);
+      if(dist < 180){
+        const force = (1 - dist/180) * attractionStrength;
+        p.vx += dx * force * 0.001;
+        p.vy += dy * force * 0.001;
+      }
+    }
+    p.vx *= 0.995;
+    p.vy *= 0.995;
+    if(p.x < -20) p.x = canvasWidth + 20;
+    if(p.x > canvasWidth + 20) p.x = -20;
+    if(p.y < -20) p.y = canvasHeight + 20;
+    if(p.y > canvasHeight + 20) p.y = -20;
+  });
+  nodes.forEach(n=>{
+    n.phase += n.speed * dt * 0.0004;
+    n.baseX += Math.cos(n.phase*1.2) * 0.08 * dt;
+    n.baseY += Math.sin(n.phase*1.4) * 0.08 * dt;
+    n.x += Math.sin(n.phase*1.3) * 0.12 * dt;
+    n.y += Math.cos(n.phase*1.1) * 0.12 * dt;
+    if(n.x < 0) n.x += canvasWidth;
+    if(n.x > canvasWidth) n.x -= canvasWidth;
+    if(n.y < 0) n.y += canvasHeight;
+    if(n.y > canvasHeight) n.y -= canvasHeight;
+  });
+}
+
+function drawGrid(){
+  const gridStep = canvasWidth < 600 ? 50 : 64;
+  aiCtx.save();
+  aiCtx.strokeStyle = 'rgba(96,165,250,0.08)';
+  aiCtx.lineWidth = 1;
+  for(let x=0;x<canvasWidth;x+=gridStep){
+    aiCtx.beginPath();
+    aiCtx.moveTo(x,0);
+    aiCtx.lineTo(x,canvasHeight);
+    aiCtx.stroke();
+  }
+  for(let y=0;y<canvasHeight;y+=gridStep){
+    aiCtx.beginPath();
+    aiCtx.moveTo(0,y);
+    aiCtx.lineTo(canvasWidth,y);
+    aiCtx.stroke();
+  }
+  aiCtx.restore();
+}
+
+function drawEnergyWave(time){
+  const wave = Math.sin(time * 0.002) * 9;
+  const gradient = aiCtx.createRadialGradient(canvasWidth*0.5, canvasHeight*0.25, 0, canvasWidth*0.5, canvasHeight*0.25, canvasWidth*0.7);
+  gradient.addColorStop(0, `rgba(96,165,250,${0.08 + wave*0.0008})`);
+  gradient.addColorStop(0.6, 'rgba(29,78,216,0.00)');
+  aiCtx.save();
+  aiCtx.fillStyle = gradient;
+  aiCtx.fillRect(0,0,canvasWidth,canvasHeight);
+  aiCtx.restore();
+}
+
+function drawScene(timestamp){
+  if(!aiCtx) return;
+  const dt = lastTimestamp ? Math.min(34, timestamp - lastTimestamp) : 16;
+  lastTimestamp = timestamp;
+  aiCtx.clearRect(0,0,canvasWidth,canvasHeight);
+  aiCtx.fillStyle = 'rgba(1,5,13,0.14)';
+  aiCtx.fillRect(0,0,canvasWidth,canvasHeight);
+  drawGrid();
+  drawEnergyWave(timestamp);
+
+  const lineThreshold = 120;
+  aiCtx.save();
+  aiCtx.globalCompositeOperation = 'lighter';
+
+  for(let i=0;i<particles.length;i++){
+    const p = particles[i];
+    for(let j=i+1;j<particles.length;j++){
+      const q = particles[j];
+      const dx = p.x - q.x;
+      const dy = p.y - q.y;
+      const dist = Math.hypot(dx,dy);
+      if(dist < lineThreshold){
+        const alpha = (1 - dist/lineThreshold) * 0.14;
+        aiCtx.strokeStyle = `rgba(96,165,250,${alpha})`;
+        aiCtx.lineWidth = 1;
+        aiCtx.beginPath();
+        aiCtx.moveTo(p.x,p.y);
+        aiCtx.lineTo(q.x,q.y);
+        aiCtx.stroke();
+      }
+    }
+  }
+
+  nodes.forEach(node=>{
+    particles.forEach(p=>{
+      const dx = p.x - node.x;
+      const dy = p.y - node.y;
+      const dist = Math.hypot(dx,dy);
+      if(dist < 180){
+        const alpha = (1 - dist/180) * 0.12;
+        aiCtx.strokeStyle = `rgba(167,139,250,${alpha})`;
+        aiCtx.lineWidth = 1.2;
+        aiCtx.beginPath();
+        aiCtx.moveTo(node.x,node.y);
+        aiCtx.lineTo(p.x,p.y);
+        aiCtx.stroke();
+      }
+    });
+  });
+
+  aiCtx.restore();
+  updateAI(dt);
+
+  particles.forEach(p=>{
+    const glow = aiCtx.createRadialGradient(p.x,p.y,p.size*0.4,p.x,p.y,p.size*5);
+    glow.addColorStop(0, `rgba(96,165,250,${p.alpha*0.85})`);
+    glow.addColorStop(0.4, `rgba(6,182,212,${p.alpha*0.25})`);
+    glow.addColorStop(1, 'rgba(10,14,33,0)');
+    aiCtx.fillStyle = glow;
+    aiCtx.beginPath();
+    aiCtx.arc(p.x,p.y,p.size*6,0,Math.PI*2);
+    aiCtx.fill();
+    aiCtx.fillStyle = `rgba(255,255,255,${p.alpha})`;
+    aiCtx.beginPath();
+    aiCtx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    aiCtx.fill();
+  });
+
+  nodes.forEach(node=>{
+    const pulse = 1 + Math.sin(timestamp*0.003 + node.phase) * 0.18;
+    const orb = aiCtx.createRadialGradient(node.x,node.y,0,node.x,node.y,node.radius*3*pulse);
+    orb.addColorStop(0, `rgba(139,92,246,0.35)`);
+    orb.addColorStop(0.35, `rgba(96,165,250,0.16)`);
+    orb.addColorStop(1, 'rgba(10,14,33,0)');
+    aiCtx.fillStyle = orb;
+    aiCtx.beginPath();
+    aiCtx.arc(node.x,node.y,node.radius*3*pulse,0,Math.PI*2);
+    aiCtx.fill();
+
+    aiCtx.beginPath();
+    aiCtx.strokeStyle = `rgba(96,165,250,0.28)`;
+    aiCtx.lineWidth = 1.4;
+    aiCtx.arc(node.x,node.y,node.radius*1.2,0,Math.PI*2);
+    aiCtx.stroke();
+
+    aiCtx.fillStyle = `rgba(255,255,255,0.95)`;
+    aiCtx.beginPath();
+    aiCtx.arc(node.x,node.y,node.radius*0.9,0,Math.PI*2);
+    aiCtx.fill();
+  });
+
+  aiCtx.save();
+  aiCtx.globalCompositeOperation = 'screen';
+  aiCtx.fillStyle = 'rgba(255,255,255,0.02)';
+  aiCtx.fillRect(0,0,canvasWidth,canvasHeight);
+  aiCtx.restore();
+
+  requestAnimationFrame(drawScene);
+}
+
+function initNeuralCanvas(){
+  if(!aiCanvas) return;
+  resizeAI();
+  createAIElements();
+  requestAnimationFrame(drawScene);
+}
+
+window.addEventListener('resize',()=>{
+  canvasDpr = window.devicePixelRatio || 1;
+  resizeAI();
+  createAIElements();
+});
+
+window.addEventListener('pointermove',e=>{
+  const rect = aiCanvas.getBoundingClientRect();
+  mouse.x = e.clientX - rect.left;
+  mouse.y = e.clientY - rect.top;
+  mouse.active = true;
+});
+window.addEventListener('pointerleave',()=>{mouse.active=false;});
+
+// INIT
+renderTracks();
+renderWorkflow();
+renderInstructors();
+renderProjects();
+renderTestimonials();
+renderPricing();
+renderWhy();
+renderFAQ();
+setTimeout(initAOS,100);
+initNeuralCanvas();
+setupPaymentMethods();
+populateCollegeDatalist();
+</script>
+</body>
+</html>
