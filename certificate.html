@@ -104,7 +104,27 @@
     .tag {display:inline-flex;align-items:center;padding:.45rem .75rem;border-radius:999px;background:rgba(255,209,102,.12);color:var(--accent);font-size:.82rem;font-weight:700;}
     .empty-state {padding:28px 24px;border-radius:22px;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12);text-align:center;color:var(--text-muted);margin-top:26px;}
     @media(max-width:1020px) {.hero{grid-template-columns:1fr;} .content-grid{grid-template-columns:1fr;} .signature-row{grid-template-columns:1fr;}}
-    @media(max-width:720px) {.page-wrap{padding:24px 16px 40px;}.certificate-inner{padding:24px;}.topbar{flex-direction:column;align-items:flex-start;}.search-box{grid-template-columns:1fr;}.hero-grid{grid-template-columns:1fr;}}
+    @media(max-width:720px) {.page-wrap{padding:24px 16px 40px;}.certificate-inner{padding:24px;}.topbar{flex-direction:column;align-items:flex-start;}.search-box{grid-template-columns:1fr;}.hero-grid{grid-template-columns:1fr;} }
+
+    /* Extra-small mobile refinements */
+    @media(max-width:420px){
+      .page-wrap{padding:16px}
+      .hero {grid-template-columns:1fr;gap:14px}
+      .hero-panel h1{font-size:1.6rem}
+      .hero-panel p{font-size:.95rem}
+      .hero-panel, .hero-qr-panel{padding:16px;border-radius:16px}
+      .certificate-inner{padding:16px}
+      .certificate-title h2{font-size:1.4rem}
+      .student-name{font-size:1.8rem}
+      .detail-list{grid-template-columns:1fr;gap:12px}
+      .signature-row{grid-template-columns:1fr;gap:12px}
+      #filePreview{min-height:200px}
+      .qr-code-frame{min-height:160px;padding:12px}
+      .qr-code-frame img{max-width:140px}
+      .registry th, .registry td{padding:10px 8px;font-size:.85rem}
+      .search-box input{padding:12px 14px}
+      .search-box button{padding:0 16px}
+    }
   </style>
 </head>
 <body>
@@ -193,6 +213,12 @@
       </div>
 
       <div class="verification-panel">
+        <div class="panel-card info-card" id="certificateInfo">
+          <h3>Earn an Industry-Recognized Certificate</h3>
+          <p style="margin-top:8px;">Unique Certificate ID — Each certificate carries a tamper-proof unique ID that recruiters can verify online at our official portal within seconds.</p>
+          <p style="margin-top:12px;"><a id="verifyPortalLink" class="tag" href="#" target="_blank" rel="noopener">Verify at official portal</a></p>
+        </div>
+
         <div class="panel-card registry" id="registrySection">
           <h3>Certificate registry</h3>
           <table>
@@ -363,6 +389,11 @@
         }
         renderFilePreview(null);
         renderCertificateQr(null);
+        const verifyLinkEl_not = document.getElementById('verifyPortalLink');
+        if (verifyLinkEl_not) {
+          verifyLinkEl_not.href = '#';
+          verifyLinkEl_not.textContent = 'Verify at official portal';
+        }
         if (elements.emptyState) {
           elements.emptyState.textContent = 'Certificate reference not found or file not present in the certificates folder.';
           elements.emptyState.style.display = 'block';
@@ -389,6 +420,12 @@
       }
       renderFilePreview(cert);
       renderCertificateQr(cert);
+      const verifyLinkEl = document.getElementById('verifyPortalLink');
+      if (verifyLinkEl) {
+        const portalBase = 'https://technova.example.com/verify';
+        verifyLinkEl.href = `${portalBase}?ref=${encodeURIComponent(cert.reference)}`;
+        verifyLinkEl.textContent = `Verify ${cert.reference} on official portal`;
+      }
       if (elements.emptyState) {
         elements.emptyState.style.display = 'none';
       }
