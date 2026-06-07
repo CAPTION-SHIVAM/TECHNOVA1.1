@@ -89,6 +89,7 @@
     .verification-panel .panel-card th {color:var(--text-muted);font-weight:600;}
     .registry {margin-top:36px;}
     .registry h3 {margin:0 0 18px;font-size:1.15rem;color:#fff;}
+    .registry-table-wrapper {overflow-x:auto;-webkit-overflow-scrolling:touch;}
     .registry table {width:100%;border-collapse:collapse;font-size:.95rem;table-layout:fixed;}
     .registry th, .registry td {padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:middle;}
     .registry th {color:var(--text-muted);text-transform:uppercase;font-size:.8rem;letter-spacing:.16em;text-align:left;}
@@ -106,7 +107,7 @@
     .tag {display:inline-flex;align-items:center;padding:.45rem .75rem;border-radius:999px;background:rgba(255,209,102,.12);color:var(--accent);font-size:.82rem;font-weight:700;}
     .empty-state {padding:28px 24px;border-radius:22px;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12);text-align:center;color:var(--text-muted);margin-top:26px;}
     @media(max-width:1020px) {.hero{grid-template-columns:1fr;} .content-grid{grid-template-columns:1fr;} .signature-row{grid-template-columns:1fr;} .topbar nav{gap:10px;} .topbar nav a{font-size:.85rem;padding:.8rem 1rem;}}
-    @media(max-width:720px) {.page-wrap{padding:16px 16px 40px;}.certificate-inner{padding:24px;}.topbar{flex-direction:column;align-items:stretch;gap:12px;padding:12px;border-radius:16px;}.topbar nav{flex-direction:column;gap:8px;align-items:stretch;}.topbar nav a{display:block;text-align:center;padding:1rem;font-size:.9rem;}.brand{justify-content:space-between;width:100%;}.search-box{grid-template-columns:1fr;}.hero-grid{grid-template-columns:1fr;} }
+    @media(max-width:720px) {.page-wrap{padding:16px 16px 40px;}.certificate-inner{padding:24px;}.topbar{flex-direction:column;align-items:stretch;gap:12px;padding:12px;border-radius:16px;}.topbar nav{flex-direction:column;gap:8px;align-items:stretch;}.topbar nav a{display:block;text-align:center;padding:1rem;font-size:.9rem;}.brand{justify-content:space-between;width:100%;}.search-box{grid-template-columns:1fr;}.hero-grid{grid-template-columns:1fr;}.registry-table-wrapper{max-height:280px;}.registry table{font-size:.85rem;}.registry th, .registry td{padding:14px 12px;}.registry td:nth-child(1) {min-width:140px;}.registry td:nth-child(2) {min-width:120px;}.registry td:nth-child(3) {min-width:120px;} }
 
     /* Extra-small mobile refinements */
     @media(max-width:420px){
@@ -127,9 +128,16 @@
       #filePreview{min-height:200px;padding:12px}
       .qr-code-frame{min-height:160px;padding:12px;border-radius:16px}
       .qr-code-frame img{max-width:140px}
-      .registry th, .registry td{padding:10px 8px;font-size:.8rem}
-      .registry td:nth-child(1) {min-width:120px;max-width:140px;}
-      .registry td:nth-child(2) {min-width:100px;max-width:150px;}
+      .registry {margin-top:20px;}
+      .registry h3 {font-size:1rem;margin-bottom:12px;}
+      .registry-table-wrapper {max-height:300px;overflow-y:auto;border-radius:16px;border:1px solid rgba(255,255,255,.08);}
+      .registry table {font-size:.75rem;}
+      .registry th, .registry td{padding:12px 10px;vertical-align:middle;}
+      .registry th {font-size:.7rem;padding:12px 10px;}
+      .registry td:nth-child(1) {min-width:130px;}
+      .registry td:nth-child(2) {min-width:110px;}
+      .registry td:nth-child(3) {min-width:100px;}
+      .registry td:nth-child(4) {min-width:100px;}
       .search-box{grid-template-columns:1fr}
       .search-box input{padding:14px 12px;font-size:1rem}
       .search-box button{padding:14px;font-size:.95rem;min-height:48px;width:100%}
@@ -243,12 +251,14 @@
 
         <div class="panel-card registry" id="registrySection">
           <h3>Certificate registry</h3>
-          <table>
-            <thead>
-              <tr><th>Reference</th><th>Name</th><th>Course</th><th>Issued</th></tr>
-            </thead>
-            <tbody id="registryBody"></tbody>
-          </table>
+          <div class="registry-table-wrapper">
+            <table>
+              <thead>
+                <tr><th>Reference</th><th>Name</th><th>Course</th><th>Issued</th></tr>
+              </thead>
+              <tbody id="registryBody"></tbody>
+            </table>
+          </div>
           <div class="empty-state" id="emptyState">Enter a reference number to verify the certificate record.</div>
         </div>
       </div>
