@@ -734,6 +734,7 @@ footer{background:var(--deep);border-top:1px solid var(--b1);padding:3.5rem 2rem
           <select id="fc" class="payment-card-input">
             <option value="" disabled selected>Select your college / university</option>
           </select>
+          <input type="text" id="fcCustom" placeholder="Enter your college / university name" class="payment-card-input" style="margin-top:0.5rem;display:none;">
         </div>
         <div class="f-row">
           <div class="f-group"><label>Course</label><select id="fco"><option value="">Select Course</option><option>B.Tech CSE</option><option>B.Tech IT</option><option>BCA</option><option>MCA</option><option>B.Sc CS</option><option>Other Engineering</option></select></div>
@@ -1278,7 +1279,7 @@ function populateCollegeDatalist(){
     'Chaudhary Charan Singh University (Meerut)', 'KMC Greater Noida', 'KCC Group of Institutions', 'Greater Noida Institute (example)',
     'IMS Ghaziabad', 'GLA University', 'AKTU Affiliated College', 'Delhi Technological University', 'Harcourt Butler Technical University',
     'JSS Academy', 'Maharishi Dayanand University', 'Indraprastha Institute of Information Technology', 'Delhi University',
-    'JIET Group', 'SRM University', 'Vellore Institute of Technology', 'Other College'
+    'JIET Group', 'SRM University', 'Vellore Institute of Technology', 'Other'
   ];
   const select = document.getElementById('fc');
   if(!select) return;
@@ -1286,6 +1287,18 @@ function populateCollegeDatalist(){
     '<option value="" disabled selected>Select your college / university</option>',
     ...colleges.map(c=>`<option value="${c}">${c}</option>`)
   ].join('');
+  select.addEventListener('change', (e) => {
+    const customInput = document.getElementById('fcCustom');
+    if (e.target.value === 'Other') {
+      customInput.style.display = 'block';
+      customInput.required = true;
+      customInput.focus();
+    } else {
+      customInput.style.display = 'none';
+      customInput.required = false;
+      customInput.value = '';
+    }
+  });
 }
 
 function handleSubmit(){
@@ -1293,12 +1306,14 @@ function handleSubmit(){
   const ln=document.getElementById('ln').value.trim();
   const fe=document.getElementById('fe').value.trim();
   const fp=document.getElementById('fp').value.trim();
-  const fc=document.getElementById('fc').value.trim();
+  let fc=document.getElementById('fc').value.trim();
+  const fcCustom=document.getElementById('fcCustom').value.trim();
+  if(fc==='Other'){fc=fcCustom;}
   const fco=document.getElementById('fco').value;
   const fy=document.getElementById('fy').value;
   const ft=document.getElementById('ft').value;
   const fm=document.getElementById('fm').value.trim();
-  if(!fn||!fe||!ft){showToast('Please fill all required fields',false);return;}
+  if(!fn||!fe||!ft||!fc){showToast('Please fill all required fields',false);return;}
   const track = getTrackDetails(ft);
   paymentSession = {fn,ln,fe,fp,fc,fco,fy,ft,fee:track.fee,origFee:track.origFee,message:fm,discount:0};
   showToast(`Application received, ${fn}! Proceed to payment to confirm your seat.`,true);
